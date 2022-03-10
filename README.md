@@ -1,2 +1,0 @@
-# OOP-WIF-SS2022-PStA
-
