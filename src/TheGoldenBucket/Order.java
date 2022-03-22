@@ -17,12 +17,12 @@ public class Order {
 
     void addDrink(Drink d){
         Utilities.enlargeDrinkArray(drinks);
-        drinks[drinks.length-1]=d;
+        drinks[drinks.length]=d;
         number_of_drinks++;
     }
 
     void addFood(Food f){
-        Utilities.enlargeFoodArray(foods);
+        this.foods=Utilities.enlargeFoodArray(foods);
         foods[foods.length-1]=f;
         number_of_foods++;
     }
