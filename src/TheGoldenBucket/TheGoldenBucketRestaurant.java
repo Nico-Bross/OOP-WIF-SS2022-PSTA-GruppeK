@@ -41,3 +41,10 @@ public class TheGoldenBucketRestaurant {
                             " different variations of our food. ");
     }
 }
+
+    /** Mögliche weitere Verbesserungen:
+    *  - Implementierung des Reservierungsmaximum unter Beachtung unterschiedlicher Tischgrößen
+    *  - Zuordnung von Bestellungen zu den Reservierungen(Mithilfe von KundenNR)
+    *  - Auflistung der Preise auf der Rechnung/Beleg
+    *  - Implementierung einer Speisekarte mit spezifischen Preisen
+    * */
