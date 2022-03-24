@@ -1,8 +1,8 @@
 package TheGoldenBucket;
 
 public class Drink {
-    String name;
-    int price;
+    private String name;
+    private int price;
 
     public Drink(String name, int price) {
         this.name = name;
