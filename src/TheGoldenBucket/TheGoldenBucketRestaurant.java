@@ -2,8 +2,7 @@ package TheGoldenBucket;
 
 public class TheGoldenBucketRestaurant {
     public static void main(String[] args) {
-        Customer max = new Customer();
-        max.name="Maxwell Powers";
+        Customer max = new Customer("Maxwell Powers");
 
         Reservation maxReservation = new Reservation();
         maxReservation.c=max;
@@ -38,7 +37,7 @@ public class TheGoldenBucketRestaurant {
         o.foods[1].price=970;
 
         System.out.println( "Dear Guest "+
-                            max.name+
+                            max.getName()+
                             " We thank you so much for yur Business. Tonight you had "+
                             o.number_of_drinks+
                             " Drinks and you ordered "+
