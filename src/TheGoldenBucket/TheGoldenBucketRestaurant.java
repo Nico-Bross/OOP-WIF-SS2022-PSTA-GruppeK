@@ -9,13 +9,9 @@ public class TheGoldenBucketRestaurant {
         maxReservation.date="31.03.2022";
         maxReservation.time="8pm";
 
-        Employee peter = new Employee();
-        peter.name="Peter Griffin";
-        peter.title="Waiter";
+        Employee peter = new Employee("Peter Griffin", "Waiter");
 
-        Employee lois = new Employee();
-        lois.title="Cook";
-        lois.name="Lois Griffin";
+        Employee lois = new Employee("Lois Griffin", "Cook");
 
         maxReservation.waiter=peter;
 
