@@ -16,8 +16,8 @@ public class Order {
     }
 
     void addDrink(Drink d){
-        Utilities.enlargeDrinkArray(drinks);
-        drinks[drinks.length]=d;
+       this.drinks=Utilities.enlargeDrinkArray(drinks);
+        drinks[drinks.length-1]=d;
         number_of_drinks++;
     }
 
