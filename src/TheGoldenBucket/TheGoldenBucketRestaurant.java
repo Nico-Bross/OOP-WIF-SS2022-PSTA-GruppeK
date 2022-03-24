@@ -41,3 +41,5 @@ public class TheGoldenBucketRestaurant {
                             " different variations of our food. ");
     }
 }
+
+// Google Doc Zusammenfassung : https://docs.google.com/document/d/19vavwyNiWq5Gjsp6yDYno27N8gOGPilP4jhZd0b3CcI/edit
