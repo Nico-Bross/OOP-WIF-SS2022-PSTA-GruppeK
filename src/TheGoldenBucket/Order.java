@@ -11,7 +11,7 @@ public class Order {
     public Order(){
         drinks= new Drink[0];
         foods = new Food[0];
-        number_of_drinks=0;
+        number_of_foods=0;
         number_of_drinks=0;
     }
 
