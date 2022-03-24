@@ -6,7 +6,7 @@ public class TheGoldenBucketRestaurant {
         max.name="Maxwell Powers";
 
         Reservation maxReservation = new Reservation();
-        maxReservation.c=max;
+        maxReservation.c=max;                              // Ungenaue bezeichnung
         maxReservation.date="31.03.2022";
         maxReservation.time="8pm";
 
