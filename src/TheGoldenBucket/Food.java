@@ -4,9 +4,9 @@ public class Food {
     private String name;
     private int price;
 
-    public Food(String n, int p) {
-        this.name = n;
-        this.price = p;
+    public Food(String name, int price) {
+        this.name = name;
+        this.price = price;
     }
 
     public void setName(String name) {

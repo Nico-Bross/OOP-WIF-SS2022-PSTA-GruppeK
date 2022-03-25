@@ -17,20 +17,14 @@ public class TheGoldenBucketRestaurant {
 
         // Later that evening Maxwell Powers likes to order some food and drinks
         Order o = new Order();
-        o.drinks=new Drink[2];
-        o.drinks[0]=new Drink();
-        o.drinks[0].name="Coke";
-        o.drinks[0].price=395;
-        o.drinks[1]=new Drink();
-        o.drinks[1].name="Negroni Cocktail";
+        o.addDrink(new Drink("Coke", 395));
+        o.addDrink(new Drink("Negroni Cocktail", 550));
 
-        o.addFood(new Food());
-        o.addFood(new Food());
-        o.addFood(new Food());
-        o.foods[0].name="Pizza Magherita";
-        o.foods[1].name="Antipasti Selection";
-        o.foods[0].price=1050;
-        o.foods[1].price=970;
+
+
+        o.addFood(new Food("Pizza Magherita", 1050));
+        o.addFood(new Food("Antipasti Selection", 970));
+
 
         System.out.println( "Dear Guest "+
                             max.getName()+
@@ -42,4 +36,9 @@ public class TheGoldenBucketRestaurant {
     }
 }
 
-// Google Doc Zusammenfassung : https://docs.google.com/document/d/19vavwyNiWq5Gjsp6yDYno27N8gOGPilP4jhZd0b3CcI/edit
+    /** Mögliche weitere Verbesserungen:
+    *  - Implementierung des Reservierungsmaximum unter Beachtung unterschiedlicher Tischgrößen
+    *  - Zuordnung von Bestellungen zu den Reservierungen(Mithilfe von KundenNR)
+    *  - Auflistung der Preise auf der Rechnung/Beleg
+    *  - Implementierung einer Speisekarte mit spezifischen Preisen
+    * */
