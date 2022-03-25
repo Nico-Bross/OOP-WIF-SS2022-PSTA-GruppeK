@@ -26,4 +26,24 @@ public class Order {
         foods[foods.length-1]=f;
         number_of_foods++;
     }
+
+    String getAllFoodNames(){
+        return "";
+    }
+    String getAllDrinkNames(){
+        return"";
+    }
+
+    double calulateTotalPrice(){
+        int totalPrice = 0;
+        for (Drink d : drinks){
+            totalPrice += d.getPrice();
+        }
+        for (Food f : foods){
+            totalPrice += f.getPrice();
+
+        }
+        return totalPrice/100D;
+    }
+
 }
