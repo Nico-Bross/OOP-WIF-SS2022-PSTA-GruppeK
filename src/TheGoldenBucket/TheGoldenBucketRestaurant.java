@@ -19,25 +19,20 @@ public class TheGoldenBucketRestaurant {
         // Later that evening Maxwell Powers likes to order some food and drinks
         Order order1 = new Order();
         maxReservation.addOrder(order1);
-        order1.drinks=new Drink[2];
-        order1.drinks[0]=new Drink("Coke",395);
-        order1.drinks[1]=new Drink("Negroni Cocktail",500);
+        order1.addDrink(new Drink("Coke", 395));
+        order1.addDrink(new Drink("Negroni Cocktail",500));
 
 
-        o.addFood(new Food());
-        o.addFood(new Food());
-        o.addFood(new Food());//foods[2] fehlt
-        o.foods[0].name="Pizza Magherita";
-        o.foods[1].name="Antipasti Selection";
-        o.foods[0].price=1050;
-        o.foods[1].price=970;
+        order1.addFood(new Food("Pizza Magharita" , 1050));
+        order1.addFood(new Food("Antipasti Selection" , 970));
+
 
         System.out.println( "Dear Guest "+
-                            max.name+
+                            max.getName()+
                             " We thank you so much for yur Business. Tonight you had "+
-                            o.number_of_drinks+
+                            order1.getNumber_of_drinks()+
                             " Drinks and you ordered "+
-                            o.number_of_foods+
+                            order1.getNumber_of_foods()+
                             " different variations of our food. ");
     }
 }

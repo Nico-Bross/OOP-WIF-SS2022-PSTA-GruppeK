@@ -7,6 +7,7 @@ public class Reservation {
     private Employee waiter;
     private Order[] orders;
 
+
     void addOrder(Order o){
         Utilities.enlargeOrderArray(orders);
         orders[orders.length]=o;
