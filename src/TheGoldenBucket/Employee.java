@@ -12,11 +12,7 @@ public class Employee {
 
     public String getTitle(){return this.title;}
 
-    public void setName(String name) {
-        this.name = name;
-   }
+    public void setName(String name) {this.name = name;}
 
-    public void setTitle(String title) {
-        this.title = title;
-   }
+    public void setTitle(String title) {this.title = title;}
 }
