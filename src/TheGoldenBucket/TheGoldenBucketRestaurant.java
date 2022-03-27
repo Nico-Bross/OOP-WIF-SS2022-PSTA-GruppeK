@@ -17,14 +17,12 @@ public class TheGoldenBucketRestaurant {
         maxReservation.setWaiter(peter);
 
         // Later that evening Maxwell Powers likes to order some food and drinks
-        Order o = new Order();
-        maxReservation.addOrder(o);
-        o.drinks=new Drink[2];
-        o.drinks[0]=new Drink();
-        o.drinks[0].name="Coke";
-        o.drinks[0].price=395;
-        o.drinks[1]=new Drink();
-        o.drinks[1].name="Negroni Cocktail";
+        Order order1 = new Order();
+        maxReservation.addOrder(order1);
+        order1.drinks=new Drink[2];
+        order1.drinks[0]=new Drink("Coke",395);
+        order1.drinks[1]=new Drink("Negroni Cocktail",500);
+
 
         o.addFood(new Food());
         o.addFood(new Food());

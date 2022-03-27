@@ -1,12 +1,12 @@
 package TheGoldenBucket;
 
 public class Order {
-    Customer c;
-    Reservation r;
+    private Customer customer;
+    Reservation reservation;
     Drink[] drinks;
     Food[] foods;
-    int number_of_drinks;
-    int number_of_foods;
+    private int number_of_drinks;
+    private int number_of_foods;
 
     public Order(){
         drinks= new Drink[0];
@@ -25,5 +25,13 @@ public class Order {
         this.foods=Utilities.enlargeFoodArray(foods);
         foods[foods.length-1]=f;
         number_of_foods++;
+    }
+
+    public int getNumber_of_drinks() {
+        return number_of_drinks;
+    }
+
+    public int getNumber_of_foods() {
+        return number_of_foods;
     }
 }
