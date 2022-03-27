@@ -11,6 +11,7 @@ public class Utilities {
     }
 
     static Drink[] enlargeDrinkArray(Drink[] t){
+
         Drink[] returnArray = new Drink[t.length+1];
         int i=0;
         for(Drink f : t){

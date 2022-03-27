@@ -7,10 +7,14 @@ public class Reservation {
     private Employee waiter;
     private Order[] orders;
 
+    public Reservation(){
+        orders = new Order[0];
+    }
+
 
     void addOrder(Order o){
-        Utilities.enlargeOrderArray(orders);
-        orders[orders.length]=o;
+        orders = Utilities.enlargeOrderArray(orders);
+        orders[0]=o;
     }
 
 

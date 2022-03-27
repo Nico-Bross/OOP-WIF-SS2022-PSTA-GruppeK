@@ -18,7 +18,7 @@ public class TheGoldenBucketRestaurant {
 
         // Later that evening Maxwell Powers likes to order some food and drinks
         Order order1 = new Order();
-        maxReservation.addOrder(order1);
+
         order1.addDrink(new Drink("Coke", 395));
         order1.addDrink(new Drink("Negroni Cocktail",500));
 
@@ -26,6 +26,7 @@ public class TheGoldenBucketRestaurant {
         order1.addFood(new Food("Pizza Magharita" , 1050));
         order1.addFood(new Food("Antipasti Selection" , 970));
 
+        maxReservation.addOrder(order1);
 
         System.out.println( "Dear Guest "+
                             max.getName()+
