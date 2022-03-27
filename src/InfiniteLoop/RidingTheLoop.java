@@ -1,6 +1,7 @@
 package InfiniteLoop;
 
 public class RidingTheLoop {
+
     public static void main(String[] args) {
         Loop l = new Loop();
         l.addData("l");
