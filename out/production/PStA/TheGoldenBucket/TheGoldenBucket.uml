@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>TheGoldenBucket</OriginalElement>
+  <nodes>
+    <node x="51.875" y="383.5">TheGoldenBucket.Employee</node>
+    <node x="99.8866869918698" y="524.0">TheGoldenBucket.Reservation</node>
+    <node x="358.8165650406503" y="146.0">TheGoldenBucket.Utilities</node>
+    <node x="190.875" y="361.0">TheGoldenBucket.Order</node>
+    <node x="314.125" y="0.0">TheGoldenBucket.Food</node>
+    <node x="260.2616869918698" y="653.0">TheGoldenBucket.TheGoldenBucketRestaurant</node>
+    <node x="430.75" y="0.0">TheGoldenBucket.Drink</node>
+    <node x="22.486280487804777" y="179.5">TheGoldenBucket.Customer</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="TheGoldenBucket.Order" target="TheGoldenBucket.Customer" relationship="TO_ONE">
+      <point x="-53.0" y="-49.5" />
+      <point x="217.375" y="339.0" />
+      <point x="228.9415650406503" y="339.0" />
+      <point x="228.9415650406503" y="309.0" />
+      <point x="41.375" y="309.0" />
+      <point x="41.375" y="299.0" />
+      <point x="79.98628048780478" y="299.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="TheGoldenBucket.TheGoldenBucketRestaurant" target="TheGoldenBucket.Employee" relationship="CREATE">
+      <point x="0.0" y="-38.5" />
+      <point x="379.2616869918698" y="627.0" />
+      <point x="10.5" y="627.0" />
+      <point x="10.5" y="502.0" />
+      <point x="71.54166666666669" y="502.0" />
+      <point x="-39.333333333333336" y="27.0" />
+    </edge>
+    <edge source="TheGoldenBucket.TheGoldenBucketRestaurant" target="TheGoldenBucket.Reservation" relationship="CREATE">
+      <point x="0.0" y="-38.5" />
+      <point x="379.2616869918698" y="627.0" />
+      <point x="181.3866869918698" y="627.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="TheGoldenBucket.Reservation" target="TheGoldenBucket.Employee" relationship="DEPENDENCY">
+      <point x="40.75" y="-38.5" />
+      <point x="222.1366869918698" y="502.0" />
+      <point x="216.1366869918698" y="502.0" />
+      <point x="216.1366869918698" y="482.0" />
+      <point x="150.20833333333334" y="482.0" />
+      <point x="39.33333333333334" y="27.0" />
+    </edge>
+    <edge source="TheGoldenBucket.Order" target="TheGoldenBucket.Food" relationship="TO_ONE">
+      <point x="-53.0" y="-49.5" />
+      <point x="217.375" y="339.0" />
+      <point x="228.9415650406503" y="339.0" />
+      <point x="228.9415650406503" y="319.0" />
+      <point x="234.0696138211381" y="319.0" />
+      <point x="234.0696138211381" y="105.0" />
+      <point x="335.875" y="105.0" />
+      <point x="-21.75" y="27.0" />
+    </edge>
+    <edge source="TheGoldenBucket.Order" target="TheGoldenBucket.Utilities" relationship="DEPENDENCY">
+      <point x="0.0" y="-49.5" />
+      <point x="270.375" y="339.0" />
+      <point x="292.8165650406503" y="339.0" />
+      <point x="292.8165650406503" y="329.0" />
+      <point x="337.8165650406503" y="329.0" />
+      <point x="337.8165650406503" y="309.0" />
+      <point x="417.0665650406503" y="309.0" />
+      <point x="-58.25" y="60.5" />
+    </edge>
+    <edge source="TheGoldenBucket.Utilities" target="TheGoldenBucket.Drink" relationship="CREATE">
+      <point x="0.0" y="-60.5" />
+      <point x="475.3165650406503" y="105.0" />
+      <point x="624.875" y="105.0" />
+      <point x="624.875" y="75.0" />
+      <point x="496.75" y="75.0" />
+      <point x="22.0" y="27.0" />
+    </edge>
+    <edge source="TheGoldenBucket.Order" target="TheGoldenBucket.Drink" relationship="CREATE">
+      <point x="53.0" y="-49.5" />
+      <point x="323.375" y="339.0" />
+      <point x="521.0116869918697" y="339.0" />
+      <point x="521.0116869918697" y="299.0" />
+      <point x="602.3165650406502" y="299.0" />
+      <point x="602.3165650406502" y="115.0" />
+      <point x="624.875" y="115.0" />
+      <point x="624.875" y="75.0" />
+      <point x="496.75" y="75.0" />
+      <point x="22.0" y="27.0" />
+    </edge>
+    <edge source="TheGoldenBucket.Order" target="TheGoldenBucket.Customer" relationship="DEPENDENCY">
+      <point x="0.0" y="-49.5" />
+      <point x="270.375" y="339.0" />
+      <point x="292.8165650406503" y="339.0" />
+      <point x="292.8165650406503" y="299.0" />
+      <point x="210.3196138211381" y="299.0" />
+      <point x="210.3196138211381" y="289.0" />
+      <point x="118.31961382113815" y="289.0" />
+      <point x="38.33333333333337" y="27.0" />
+    </edge>
+    <edge source="TheGoldenBucket.TheGoldenBucketRestaurant" target="TheGoldenBucket.Food" relationship="CREATE">
+      <point x="0.0" y="-38.5" />
+      <point x="379.2616869918698" y="627.0" />
+      <point x="613.3165650406502" y="627.0" />
+      <point x="613.3165650406502" y="125.0" />
+      <point x="497.875" y="125.0" />
+      <point x="497.875" y="85.0" />
+      <point x="379.375" y="85.0" />
+      <point x="21.75" y="27.0" />
+    </edge>
+    <edge source="TheGoldenBucket.Reservation" target="TheGoldenBucket.Employee" relationship="TO_ONE">
+      <point x="-40.75" y="-38.5" />
+      <point x="140.6366869918698" y="502.0" />
+      <point x="116.10873983739839" y="502.0" />
+      <point x="116.10873983739839" y="492.0" />
+      <point x="110.875" y="492.0" />
+      <point x="7.105427357601002E-15" y="27.0" />
+    </edge>
+    <edge source="TheGoldenBucket.TheGoldenBucketRestaurant" target="TheGoldenBucket.Order" relationship="CREATE">
+      <point x="0.0" y="-38.5" />
+      <point x="379.2616869918698" y="627.0" />
+      <point x="508.0116869918698" y="627.0" />
+      <point x="508.01168699186974" y="502.0" />
+      <point x="323.375" y="502.0" />
+      <point x="53.0" y="49.5" />
+    </edge>
+    <edge source="TheGoldenBucket.Order" target="TheGoldenBucket.Reservation" relationship="DEPENDENCY">
+      <point x="0.0" y="49.5" />
+      <point x="270.375" y="482.0" />
+      <point x="216.1366869918698" y="482.0" />
+      <point x="216.1366869918698" y="502.0" />
+      <point x="222.1366869918698" y="502.0" />
+      <point x="40.75" y="-38.5" />
+    </edge>
+    <edge source="TheGoldenBucket.Reservation" target="TheGoldenBucket.Order" relationship="DEPENDENCY">
+      <point x="40.75" y="-38.5" />
+      <point x="222.1366869918698" y="502.0" />
+      <point x="216.1366869918698" y="502.0" />
+      <point x="216.1366869918698" y="482.0" />
+      <point x="270.375" y="482.0" />
+      <point x="0.0" y="49.5" />
+    </edge>
+    <edge source="TheGoldenBucket.Reservation" target="TheGoldenBucket.Customer" relationship="DEPENDENCY">
+      <point x="40.75" y="-38.5" />
+      <point x="222.1366869918698" y="502.0" />
+      <point x="216.1366869918698" y="502.0" />
+      <point x="216.1366869918698" y="482.0" />
+      <point x="180.375" y="482.0" />
+      <point x="180.375" y="339.0" />
+      <point x="210.3196138211381" y="339.0" />
+      <point x="210.3196138211381" y="289.0" />
+      <point x="118.31961382113815" y="289.0" />
+      <point x="38.33333333333337" y="27.0" />
+    </edge>
+    <edge source="TheGoldenBucket.Order" target="TheGoldenBucket.Drink" relationship="TO_ONE">
+      <point x="-53.0" y="-49.5" />
+      <point x="217.375" y="339.0" />
+      <point x="228.9415650406503" y="339.0" />
+      <point x="228.9415650406503" y="319.0" />
+      <point x="314.76168699186974" y="319.0" />
+      <point x="314.76168699186974" y="115.0" />
+      <point x="452.75" y="115.0" />
+      <point x="-22.0" y="27.0" />
+    </edge>
+    <edge source="TheGoldenBucket.Reservation" target="TheGoldenBucket.Utilities" relationship="DEPENDENCY">
+      <point x="40.75" y="-38.5" />
+      <point x="222.1366869918698" y="502.0" />
+      <point x="216.1366869918698" y="502.0" />
+      <point x="216.1366869918698" y="482.0" />
+      <point x="360.375" y="482.0" />
+      <point x="360.375" y="319.0" />
+      <point x="337.8165650406503" y="319.0" />
+      <point x="337.8165650406503" y="309.0" />
+      <point x="417.0665650406503" y="309.0" />
+      <point x="-58.25" y="60.5" />
+    </edge>
+    <edge source="TheGoldenBucket.Reservation" target="TheGoldenBucket.Order" relationship="TO_ONE">
+      <point x="-40.75" y="-38.5" />
+      <point x="140.6366869918698" y="502.0" />
+      <point x="116.10873983739839" y="502.0" />
+      <point x="116.10873983739839" y="492.0" />
+      <point x="217.375" y="492.0" />
+      <point x="-53.0" y="49.5" />
+    </edge>
+    <edge source="TheGoldenBucket.Order" target="TheGoldenBucket.Reservation" relationship="TO_ONE">
+      <point x="-53.0" y="49.5" />
+      <point x="217.375" y="492.0" />
+      <point x="116.10873983739839" y="492.0" />
+      <point x="116.10873983739839" y="502.0" />
+      <point x="140.6366869918698" y="502.0" />
+      <point x="-40.75" y="-38.5" />
+    </edge>
+    <edge source="TheGoldenBucket.TheGoldenBucketRestaurant" target="TheGoldenBucket.Drink" relationship="CREATE">
+      <point x="0.0" y="-38.5" />
+      <point x="379.2616869918698" y="627.0" />
+      <point x="639.9446138211381" y="627.0" />
+      <point x="639.9446138211381" y="115.0" />
+      <point x="624.875" y="115.0" />
+      <point x="624.875" y="75.0" />
+      <point x="496.75" y="75.0" />
+      <point x="22.0" y="27.0" />
+    </edge>
+    <edge source="TheGoldenBucket.TheGoldenBucketRestaurant" target="TheGoldenBucket.Customer" relationship="CREATE">
+      <point x="0.0" y="-38.5" />
+      <point x="379.2616869918698" y="627.0" />
+      <point x="0.0" y="627.0" />
+      <point x="0.0" y="339.0" />
+      <point x="41.652947154471406" y="339.0" />
+      <point x="-38.33333333333334" y="27.0" />
+    </edge>
+    <edge source="TheGoldenBucket.Utilities" target="TheGoldenBucket.Order" relationship="CREATE">
+      <point x="58.25" y="60.5" />
+      <point x="533.5665650406503" y="299.0" />
+      <point x="521.0116869918697" y="299.0" />
+      <point x="521.0116869918697" y="339.0" />
+      <point x="323.375" y="339.0" />
+      <point x="53.0" y="-49.5" />
+    </edge>
+    <edge source="TheGoldenBucket.Reservation" target="TheGoldenBucket.Customer" relationship="TO_ONE">
+      <point x="-40.75" y="-38.5" />
+      <point x="140.6366869918698" y="502.0" />
+      <point x="116.10873983739839" y="502.0" />
+      <point x="116.10873983739839" y="492.0" />
+      <point x="41.375" y="492.0" />
+      <point x="41.375" y="299.0" />
+      <point x="79.98628048780478" y="299.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="TheGoldenBucket.Utilities" target="TheGoldenBucket.Food" relationship="CREATE">
+      <point x="0.0" y="-60.5" />
+      <point x="475.3165650406503" y="95.0" />
+      <point x="497.875" y="95.0" />
+      <point x="497.875" y="85.0" />
+      <point x="379.375" y="85.0" />
+      <point x="21.75" y="27.0" />
+    </edge>
+    <edge source="TheGoldenBucket.Order" target="TheGoldenBucket.Food" relationship="CREATE">
+      <point x="53.0" y="-49.5" />
+      <point x="323.375" y="339.0" />
+      <point x="521.0116869918697" y="339.0" />
+      <point x="521.0116869918697" y="299.0" />
+      <point x="348.3165650406503" y="299.0" />
+      <point x="348.3165650406503" y="125.0" />
+      <point x="497.875" y="125.0" />
+      <point x="497.875" y="85.0" />
+      <point x="379.375" y="85.0" />
+      <point x="21.75" y="27.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.016" showDependencies="true" x="376.77771560057454" y="349.1700598996209" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
