@@ -2,13 +2,13 @@ package TheGoldenBucket;
 
 public class TheGoldenBucketRestaurant {
     public static void main(String[] args) {
-        Customer max = new Customer();
-        max.name="Maxwell Powers";
+        Customer max = new Customer("Maxwell Powers");
+
 
         Reservation maxReservation = new Reservation();
-        maxReservation.c=max;
-        maxReservation.date="31.03.2022";
-        maxReservation.time="8pm";
+        maxReservation.setCustomer(max);
+        maxReservation.setDate("31.03.2022");
+        maxReservation.setTime("8pm");
 
         Employee peter = new Employee();
         peter.name="Peter Griffin";
@@ -22,6 +22,7 @@ public class TheGoldenBucketRestaurant {
 
         // Later that evening Maxwell Powers likes to order some food and drinks
         Order o = new Order();
+        maxReservation.addOrder(o);
         o.drinks=new Drink[2];
         o.drinks[0]=new Drink();
         o.drinks[0].name="Coke";
@@ -31,7 +32,7 @@ public class TheGoldenBucketRestaurant {
 
         o.addFood(new Food());
         o.addFood(new Food());
-        o.addFood(new Food());
+        o.addFood(new Food());//foods[2] fehlt
         o.foods[0].name="Pizza Magherita";
         o.foods[1].name="Antipasti Selection";
         o.foods[0].price=1050;
