@@ -10,11 +10,11 @@ public class TheGoldenBucketRestaurant {
         maxReservation.setDate("31.03.2022");
         maxReservation.setTime("8pm");
 
-        Employee peter = new Employee("Peter Griffin","Waiter");
+        Employee peter = new Employee("Peter Griffin","Waiter") ;
 
-        Employee lois = new Employee("Lois","Cook");
+        Employee lois = new Employee("Lois","Cook") ;
 
-        maxReservation.setWaiter(peter);
+        maxReservation.setWaiter(peter) ;
 
         // Later that evening Maxwell Powers likes to order some food and drinks
         Order o = new Order();
