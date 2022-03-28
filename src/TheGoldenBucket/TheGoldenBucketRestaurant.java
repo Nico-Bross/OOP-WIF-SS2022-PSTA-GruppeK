@@ -4,10 +4,10 @@ public class TheGoldenBucketRestaurant {                    // Google Doc Zusamm
     public static void main(String[] args) {
         Customer max = new Customer("Maxwell Powers");
 
-        Reservation maxReservation = new Reservation();
-        maxReservation.c = max;
+        Reservation maxReservation = new Reservation(max, "8pm", "31.03.2022");
+        /*maxReservation.c = max;
         maxReservation.date = "31.03.2022";
-        maxReservation.time = "8pm";
+        maxReservation.time = "8pm";*/
 
 
         Employee peter = new Employee("Peter Griffin", "Waiter"); // Neu commit 1
