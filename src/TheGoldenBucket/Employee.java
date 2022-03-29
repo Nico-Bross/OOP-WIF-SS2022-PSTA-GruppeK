@@ -9,4 +9,9 @@ public class Employee {
         this.name = name;
         this.title = title;
     }
+
+    @Override
+    public String toString() {
+        return name + " the " + title;
+    }
 }

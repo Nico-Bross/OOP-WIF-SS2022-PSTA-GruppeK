@@ -1,19 +1,17 @@
 package TheGoldenBucket;
 
+import java.util.Arrays;
+
 public class Order {
 
-    private Customer c;
-    private Reservation r;
     private Drink[] drinks;
     private Food[] foods;
     private int number_of_drinks;
     private int number_of_foods;
 
-    public Order(Customer c, Reservation r, Drink[] drinks, Food[] foods) {
-        this.c = c;
-        this.r = r;
-        this.drinks = drinks;
-        this.foods = foods;
+    public Order() {
+        this.drinks = new Drink[0];
+        this.foods = new Food[0];
         this.number_of_drinks = 0;
         this.number_of_foods = 0;
     }
@@ -36,5 +34,10 @@ public class Order {
 
     public int getNumber_of_foods() {
         return number_of_foods;
+    }
+
+    @Override
+    public String toString() {
+        return "Drinks:" + Arrays.toString(drinks) + ",\nFoods:" + Arrays.toString(foods);
     }
 }
