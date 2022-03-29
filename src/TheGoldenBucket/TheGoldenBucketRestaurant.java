@@ -24,8 +24,8 @@ public class TheGoldenBucketRestaurant {                    // Google Doc Zusamm
         o.addFood(new Food("Pizza Magherita", 1050));
         o.addFood(new Food("Antipasti Selection", 970));
 
-        System.out.printf("Dear Guest %s We thank you so much for your Business. Tonight you " +
-                        "had %d Drinks (%s) and you ordered %d different variations of our food (%s) with a total cost of: %.2f € %n ",
+        System.out.printf("Dear guest %s we thank you so much for your visit. Tonight you " +
+                        "had %d drinks %s and you ordered these %d different dishes %s with a total cost of: %.2f € %n ",
                 max.getName(), o.number_of_drinks, o.getAllDrinkNames(), o.number_of_foods, o.getAllFoodNames(), o.calulateTotalPrice());
 
 

@@ -1,5 +1,9 @@
 package TheGoldenBucket;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Order {
     Customer c;
     Reservation r;
@@ -28,10 +32,18 @@ public class Order {
     }
 
     String getAllFoodNames(){
-        return "";
+        List<String> list = new ArrayList<>();
+        for (Food food : foods) {
+            list.add(food.getName());
+        }
+        return Arrays.toString(list.toArray());
     }
     String getAllDrinkNames(){
-        return "";
+        List<String> list = new ArrayList<>();
+        for (Drink drink : drinks) {
+            list.add(drink.getName());
+        }
+        return Arrays.toString(list.toArray());
     }
 
     double calulateTotalPrice(){
