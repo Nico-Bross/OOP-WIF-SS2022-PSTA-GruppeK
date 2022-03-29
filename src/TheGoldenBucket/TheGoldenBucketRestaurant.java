@@ -5,12 +5,8 @@ public class TheGoldenBucketRestaurant {                    // Google Doc Zusamm
         Customer max = new Customer("Maxwell Powers");
 
         Reservation maxReservation = new Reservation(max, "8pm", "31.03.2022");
-        /*maxReservation.c = max;
-        maxReservation.date = "31.03.2022";
-        maxReservation.time = "8pm";*/
 
-
-        Employee peter = new Employee("Peter Griffin", "Waiter"); // Neu commit 1
+        Employee peter = new Employee("Peter Griffin", "Waiter");
         Employee lois = new Employee("Lois Griffin", "Cook");
 
         maxReservation.waiter = peter;
@@ -28,18 +24,6 @@ public class TheGoldenBucketRestaurant {                    // Google Doc Zusamm
                         "had %d drinks %s and you ordered these %d different dishes %s with a total cost of: %.2f € %n ",
                 max.getName(), o.number_of_drinks, o.getAllDrinkNames(), o.number_of_foods, o.getAllFoodNames(), o.calulateTotalPrice());
 
-
-        // Das folgende sparen wir uns oder ??
-        /*System.out.println("Dear Guest " +
-                max.getName() +
-                " We thank you so much for yur Business. Tonight you had " +
-                o.number_of_drinks +
-                " Drinks" + "(" + o.getAllDrinkNames() + ")" + " and you ordered " +       //evtl noch Textausgabe ändern damit es sich schöner anhört
-                o.number_of_foods +
-                " different variations" + " of our food " + "(" + o.getAllFoodNames() + ")"
-                + "with a total cost of:" + o.calulateTotalPrice() + "€");
-
-         */
     }
 }
 

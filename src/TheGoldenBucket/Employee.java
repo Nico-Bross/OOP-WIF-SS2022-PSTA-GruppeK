@@ -1,6 +1,6 @@
 package TheGoldenBucket;
 
-public class Employee {                             // Neu commit 1
+public class Employee {
     private String name;
     private String title;
 
