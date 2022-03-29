@@ -1,6 +1,6 @@
 package TheGoldenBucket;
 
-public class Utilities {
+class Utilities {
     static Food[] enlargeFoodArray(Food[] t){
         Food[] returnArray = new Food[t.length+1];
         int i=0;
