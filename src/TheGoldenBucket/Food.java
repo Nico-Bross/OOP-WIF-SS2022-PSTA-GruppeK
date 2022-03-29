@@ -14,4 +14,20 @@ public class Food {
     public String toString() {
         return name + " for " + price/100.0 + "€";
     }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
