@@ -1,6 +1,6 @@
 package TheGoldenBucket;
 
-public class Order {
+public class Order{
     Customer c;
     Reservation r;
     Drink[] drinks;
@@ -12,12 +12,13 @@ public class Order {
         drinks= new Drink[0];
         foods = new Food[0];
         number_of_drinks=0;
-        number_of_drinks=0;
+        number_of_foods=0;
+
     }
 
     void addDrink(Drink d){
-        Utilities.enlargeDrinkArray(drinks);
-        drinks[drinks.length]=d;
+        this.drinks = Utilities.enlargeDrinkArray(drinks);
+        drinks[drinks.length-1]=d;
         number_of_drinks++;
     }
 
@@ -26,4 +27,5 @@ public class Order {
         foods[foods.length-1]=f;
         number_of_foods++;
     }
+
 }

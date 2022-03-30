@@ -8,7 +8,7 @@ public class Reservation {
     Order[] orders;
 
     void addOrder(Order o){
-        Utilities.enlargeOrderArray(orders);
-        orders[orders.length]=o;
+        this.orders = Utilities.enlargeOrderArray(orders);
+        orders[orders.length-1]=o;
     }
 }
