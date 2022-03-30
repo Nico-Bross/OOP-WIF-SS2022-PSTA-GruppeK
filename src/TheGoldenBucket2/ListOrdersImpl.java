@@ -1,6 +1,9 @@
 package TheGoldenBucket2;
 
-public class ListOrdersImpl implements ListOrders{
+import TheGoldenBucket2.Inter.ListOrders;
+
+public class ListOrdersImpl implements ListOrders {
+
     private ListOrdersImpl.ListElement first;
 
     public class ListElement {
@@ -23,7 +26,7 @@ public class ListOrdersImpl implements ListOrders{
         ListOrdersImpl.ListElement current = first;
 
         while (current.next != null){
-            if (current.o.orderId == addOrder.orderId){
+            if (current.o.getOrderId() == addOrder.getOrderId()){
                 return true;
             } else {
                 current = current.next;
@@ -41,7 +44,7 @@ public class ListOrdersImpl implements ListOrders{
         ListOrdersImpl.ListElement current = first;
 
         while (current.next != null){
-            if (current.o.orderId == checkOrder.orderId){
+            if (current.o.getOrderId() == checkOrder.getOrderId()){
                 return true;
             } else {
                 current = current.next;
@@ -56,7 +59,7 @@ public class ListOrdersImpl implements ListOrders{
             return false;
         }
 
-        if (first.o.orderId == o.orderId){
+        if (first.o.getOrderId() == o.getOrderId()){
             first = first.next;
             return true;
         }
@@ -64,7 +67,7 @@ public class ListOrdersImpl implements ListOrders{
         ListOrdersImpl.ListElement current = first;
 
         while (current.next != null){
-            if (current.next.o.orderId == o.orderId){
+            if (current.next.o.getOrderId() == o.getOrderId()){
                 current.next = current.next.next;
                 return true;
             } else {

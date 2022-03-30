@@ -1,6 +1,7 @@
-package TheGoldenBucket2;
+package TheGoldenBucket2.Help;
 
 public class Customer {
+
     private String name;
 
     public Customer (String name){

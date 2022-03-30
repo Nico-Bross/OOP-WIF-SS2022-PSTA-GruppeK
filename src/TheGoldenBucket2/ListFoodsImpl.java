@@ -1,6 +1,9 @@
 package TheGoldenBucket2;
 
-public class ListFoodsImpl implements ListFoods{
+import TheGoldenBucket2.Help.Food;
+import TheGoldenBucket2.Inter.ListFoods;
+
+public class ListFoodsImpl implements ListFoods {
 
     private ListFoodsImpl.ListElement first;
 
@@ -24,7 +27,7 @@ public class ListFoodsImpl implements ListFoods{
         ListFoodsImpl.ListElement current = first;
 
         while (current.next != null){
-            if (current.f== addFood){
+            if (current.f == addFood){
                 return true;
             } else {
                 current = current.next;

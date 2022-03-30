@@ -1,14 +1,18 @@
 package TheGoldenBucket2;
 
-import TheGoldenBucket2.Customer;
-import TheGoldenBucket2.Drink;
+import TheGoldenBucket2.Help.Customer;
+import TheGoldenBucket2.Help.Drink;
+import TheGoldenBucket2.Help.Employee;
+import TheGoldenBucket2.Help.Food;
 
 public class TheGoldenBucketRestaurant {
+
     public static void main(String[] args) {
+
         Customer max = new Customer("Maxwell Powers");
         Employee peter = new Employee("Peter Griffin","Waiter");
-        Reservation maxReservation = new Reservation(max,"8pm", "31.03.2022", peter);
         Employee lois = new Employee("Lois Griffin","Cook");
+        Reservation maxReservation = new Reservation(max,"8pm", "31.03.2022", peter);
 
         // Later that evening Maxwell Powers likes to order some food and drinks
         Order o1 = new Order(1);
@@ -42,10 +46,10 @@ public class TheGoldenBucketRestaurant {
         while (currentOrder != null){
             TotalNumberOfDrinks += currentOrder.o.getDrinkNumber();
             TotalNumberOfFoods += currentOrder.o.getFoodNumber();
-            System.out.println("OrderId: "+currentOrder.o.orderId);
+            System.out.println("OrderId: "+ currentOrder.o.getOrderId());
             System.out.println();
             System.out.println("Drinks:");
-            ListDrinksImpl.ListElement currentDrink = currentOrder.o.drinks.getFirst();
+            ListDrinksImpl.ListElement currentDrink = currentOrder.o.getDrinks().getFirst();
             while (currentDrink != null ){
                 System.out.println("\t"+currentDrink.d.getName()+"\t\t\t"+currentDrink.d.getPrice());
                 price += currentDrink.d.getPrice();
@@ -53,7 +57,7 @@ public class TheGoldenBucketRestaurant {
             }
 
             System.out.println("Foods:");
-            ListFoodsImpl.ListElement currentFood = currentOrder.o.foods.getFirst();
+            ListFoodsImpl.ListElement currentFood = currentOrder.o.getFoods().getFirst();
             while (currentFood != null ){
                 System.out.println("\t"+currentFood.f.getName()+"\t\t\t"+currentFood.f.getPrice());
                 price += currentFood.f.getPrice();
@@ -65,6 +69,6 @@ public class TheGoldenBucketRestaurant {
         System.out.println("Total Number of Foods: "+ TotalNumberOfFoods);
         System.out.println("Total Price: "+ price);
         System.out.println();
-        System.out.println("Your waiter was "+maxReservation.getEmployee().getName());
+        System.out.println("Your waiter was "+ maxReservation.getEmployee().getName());
     }
 }

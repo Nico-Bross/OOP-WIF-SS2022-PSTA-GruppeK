@@ -1,7 +1,9 @@
 package TheGoldenBucket2;
 
-public class ListDrinksImpl implements ListDrinks{
+import TheGoldenBucket2.Help.Drink;
+import TheGoldenBucket2.Inter.ListDrinks;
 
+public class ListDrinksImpl implements ListDrinks {
 
     private ListDrinksImpl.ListElement first;
 

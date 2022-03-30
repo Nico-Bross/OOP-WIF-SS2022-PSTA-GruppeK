@@ -1,8 +1,8 @@
 package TheGoldenBucket2;
 
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+import TheGoldenBucket2.Help.Drink;
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ListTest {
     @Test

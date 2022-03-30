@@ -1,6 +1,7 @@
-package TheGoldenBucket2;
+package TheGoldenBucket2.Help;
 
 public class Drink {
+
     private String name;
     private int price;
 
