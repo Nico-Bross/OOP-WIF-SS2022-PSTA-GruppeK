@@ -43,7 +43,7 @@ public class TheGoldenBucketRestaurant {
         //o.foods[1].mealPrice=970;
 
         System.out.println( "Dear Guest "+
-                            max.name+                 //protected String name
+                            max.name+                 //protected String name  //getter methode
                             " We thank you so much for yur Business. Tonight you had "+
                             o.number_of_drinks+
                             " Drinks and you ordered "+

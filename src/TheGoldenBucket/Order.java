@@ -1,7 +1,7 @@
 package TheGoldenBucket;
 
 public class Order{
-    Customer name;
+  private    Customer name;
     Reservation r;
     Drink[] drinks;
     Food[] foods;
