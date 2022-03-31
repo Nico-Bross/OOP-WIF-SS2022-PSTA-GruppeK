@@ -1,14 +1,11 @@
 package TheGoldenBucket2;
 
-import TheGoldenBucket2.Customer;
-import TheGoldenBucket2.Drink;
-
 public class Order {
-    int orderId;
-    Customer c;
-    Reservation r;
-    ListDrinks drinks;
-    ListFoods foods;
+    private int orderId;
+    private Customer c;
+    private Reservation r;
+    private ListDrinks drinks;
+    private ListFoods foods;
 
     public Order(int id){
         orderId = id;
@@ -31,4 +28,10 @@ public class Order {
     public void addDrink (Drink d){
         drinks.add(d);
     }
+
+    public ListFoods getListFoods(){return foods;}
+
+    public ListDrinks getListDrinks(){return drinks;}
+
+    public int getOrderId(){return orderId;};
 }

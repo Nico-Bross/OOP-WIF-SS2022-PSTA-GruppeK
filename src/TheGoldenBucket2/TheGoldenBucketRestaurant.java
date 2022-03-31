@@ -39,10 +39,10 @@ public class TheGoldenBucketRestaurant {
         while (currentOrder != null){
             TotalNumberOfDrinks += currentOrder.o.getDrinkNumber();
             TotalNumberOfFoods += currentOrder.o.getFoodNumber();
-            System.out.println("OrderId: "+currentOrder.o.orderId);
+            System.out.println("OrderId: "+currentOrder.o.getOrderId());
             System.out.println();
             System.out.println("Drinks:");
-            ListDrinksImpl.ListElement currentDrink = currentOrder.o.drinks.getFirst();
+            ListDrinksImpl.ListElement currentDrink = currentOrder.o.getListDrinks().getFirst();
             while (currentDrink != null ){
                 System.out.println("\t"+currentDrink.d.getName()+"\t\t\t"+currentDrink.d.getPrice());
                 price += currentDrink.d.getPrice();
@@ -50,7 +50,7 @@ public class TheGoldenBucketRestaurant {
             }
 
             System.out.println("Foods:");
-            ListFoodsImpl.ListElement currentFood = currentOrder.o.foods.getFirst();
+            ListFoodsImpl.ListElement currentFood = currentOrder.o.getListFoods().getFirst();
             while (currentFood != null ){
                 System.out.println("\t"+currentFood.f.getName()+"\t\t\t"+currentFood.f.getPrice());
                 price += currentFood.f.getPrice();
