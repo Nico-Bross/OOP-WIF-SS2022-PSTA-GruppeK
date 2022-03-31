@@ -2,23 +2,17 @@ package TheGoldenBucket;
 
 public class TheGoldenBucketRestaurant {
     public static void main(String[] args) {
-        Customer max = new Customer();
-        max.name="Maxwell Powers";s
+        Customer max = new Customer("Maxwell Powers");
 
-        Reservation maxReservation = new Reservation();
-        maxReservation.c=max;
-        maxReservation.date="31.03.2022";
-        maxReservation.time="8pm";
+        //Konstruktor einbauen + private setzen und getter/setter Methoden
+        Reservation maxReservation = new Reservation(max, "8pm", "31.03.2022");
 
-        Employee peter = new Employee();
-        peter.name="Peter Griffin";
-        peter.title="Waiter";
+        Employee peter = new Employee("Peter Griffin", "Waiter");
 
-        Employee lois = new Employee();
-        lois.title="Cook";
-        lois.name="Lois Griffin";
+        Employee lois = new Employee("Lois Griffin", "Cook");
 
-        maxReservation.waiter=peter;
+
+        maxReservation.setWaiter(peter);
 
         // Later that evening Maxwell Powers likes to order some food and drinks
         Order o = new Order();
@@ -38,11 +32,11 @@ public class TheGoldenBucketRestaurant {
         o.foods[1].price=970;
 
         System.out.println( "Dear Guest "+
-                            max.name+
+                            max.getName()+
                             " We thank you so much for yur Business. Tonight you had "+
-                            o.number_of_drinks+
+                            o.getNumber_of_drinks()+
                             " Drinks and you ordered "+
-                            o.number_of_foods+
+                            o.getNumber_of_foods()+
                             " different variations of our food. ");
     }
 }
