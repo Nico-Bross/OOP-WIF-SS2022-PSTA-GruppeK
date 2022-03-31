@@ -3,7 +3,7 @@ package TheGoldenBucket;
 public class TheGoldenBucketRestaurant {
     public static void main(String[] args) {
         Customer max = new Customer();
-        max.name="Maxwell Powers";
+        max.name="Maxwell Powers";s
 
         Reservation maxReservation = new Reservation();
         maxReservation.c=max;
