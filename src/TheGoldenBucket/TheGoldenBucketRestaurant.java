@@ -5,31 +5,22 @@ public class TheGoldenBucketRestaurant {
         Customer max = new Customer("Maxwell Powers");
 
         //Konstruktor einbauen + private setzen und getter/setter Methoden
-        Reservation maxReservation = new Reservation(max, "8pm", "31.03.2022");
 
         Employee peter = new Employee("Peter Griffin", "Waiter");
 
         Employee lois = new Employee("Lois Griffin", "Cook");
 
+        Reservation maxReservation = new Reservation(max, "8pm", "31.03.2022", peter);
 
-        maxReservation.setWaiter(peter);
 
         // Later that evening Maxwell Powers likes to order some food and drinks
-        Order o = new Order();
-        o.drinks=new Drink[2];
-        o.drinks[0]=new Drink();
-        o.drinks[0].name="Coke";
-        o.drinks[0].price=395;
-        o.drinks[1]=new Drink();
-        o.drinks[1].name="Negroni Cocktail";
+        Order o = new Order(max);
+        o.addDrink(new Drink("Coke", 395));
+        o.addDrink(new Drink ("Negroni Cocktail", 0));
 
-        o.addFood(new Food());
-        o.addFood(new Food());
-        o.addFood(new Food());
-        o.foods[0].name="Pizza Magherita";
-        o.foods[1].name="Antipasti Selection";
-        o.foods[0].price=1050;
-        o.foods[1].price=970;
+        o.addFood(new Food("Pizza Magerita", 1050));
+        o.addFood(new Food("Antipasti Selection", 970));
+
 
         System.out.println( "Dear Guest "+
                             max.getName()+

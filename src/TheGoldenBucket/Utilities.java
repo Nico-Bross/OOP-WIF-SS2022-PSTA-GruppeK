@@ -1,30 +1,44 @@
 package TheGoldenBucket;
 
 public class Utilities {
-    static Food[] enlargeFoodArray(Food[] t){
-        Food[] returnArray = new Food[t.length+1];
-        int i=0;
-        for(Food f : t){
-            returnArray[i++]=f;
+    static Food enlargeFood(Food head,Food t){
+        if (head==null){
+            return t;
         }
-        return returnArray;
+        else{
+        Food it = head;
+        while (it.getNextFood() != null){
+            it= it.getNextFood();
+        }
+        it.setNextFood(t);
+        return head;
+        }
     }
 
-    static Drink[] enlargeDrinkArray(Drink[] t){
-        Drink[] returnArray = new Drink[t.length+1];
-        int i=0;
-        for(Drink f : t){
-            returnArray[i++]=f;
+    static Drink enlargeDrink(Drink head, Drink t){
+        if (head==null){
+            return t;
         }
-        return returnArray;
+        else{
+            Drink it = head;
+
+        while (it.getNextDrink() != null){
+            it= it.getNextDrink();
+        }
+        it.setNextDrink(t);
+        return head;}
     }
 
-    static Order[] enlargeOrderArray(Order[] o){
-        Order[] returnArray = new Order[o.length+1];
-        int i=0;
-        for(Order f : o){
-            returnArray[i++]=f;
+    static Order enlargeOrder(Order head, Order o){
+        if (head==null){
+            return o;
         }
-        return returnArray;
+        else{
+        Order it = head;
+        while (it.getNextOrder() != null){
+            it= it.getNextOrder();
+        }
+        it.setNextOrder(o);
+        return head;}
     }
 }

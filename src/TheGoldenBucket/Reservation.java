@@ -5,14 +5,14 @@ public class Reservation {
     private String time;
     private String date;
     private Employee waiter;
-    private Order[] orders;
+    private Order headOrder;
 
-    public Reservation(Customer c, String time, String date, Employee waiter, Order[] orders) {
+    public Reservation(Customer c, String time, String date, Employee waiter) {
         this.c = c;
         this.time = time;
         this.date = date;
         this.waiter = waiter;
-        this.orders = orders;
+        this.headOrder = null;
     }
 
 
@@ -28,8 +28,8 @@ public class Reservation {
     public void setWaiter(Employee waiter) {
         this.waiter = waiter;
     }
-    public void setOrders(Order[] orders) {
-        this.orders = orders;
+    public void setOrders(Order orders) {
+        this.headOrder = orders;
     }
 
     public Customer getC() {
@@ -44,12 +44,11 @@ public class Reservation {
     public Employee getWaiter() {
         return waiter;
     }
-    public Order[] getOrders() {
-        return orders;
+    public Order getHeadOrder() {
+        return headOrder;
     }
 
     void addOrder(Order o){
-        Utilities.enlargeOrderArray(orders);
-        orders[orders.length]=o;
+        headOrder = Utilities.enlargeOrder(this.headOrder, o);
     }
 }
