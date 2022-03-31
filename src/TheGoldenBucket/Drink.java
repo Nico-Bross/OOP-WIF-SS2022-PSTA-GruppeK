@@ -4,7 +4,11 @@ public class Drink {
     private String name;
      private int price;
 
-     public Drink(String name, int price){
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public Drink(String name, int price){
          this.name = name;
          this.price = price;
      }

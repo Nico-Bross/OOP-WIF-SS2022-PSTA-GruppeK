@@ -17,6 +17,10 @@ public class Food {
         return price;
     }
 
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     public void setName(String name) {
         this.name = name;
     }

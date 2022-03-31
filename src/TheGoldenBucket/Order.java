@@ -23,6 +23,14 @@ public class Order {
         number_of_drinks++;
     }
 
+    public void setNumber_of_drinks(int number_of_drinks) {
+        this.number_of_drinks = number_of_drinks;
+    }
+
+    public void setNumber_of_foods(int number_of_foods) {
+        this.number_of_foods = number_of_foods;
+    }
+
     void addFood(Food f){
         this.foods=Utilities.enlargeFoodArray(foods);
         foods[foods.length-1]=f;
