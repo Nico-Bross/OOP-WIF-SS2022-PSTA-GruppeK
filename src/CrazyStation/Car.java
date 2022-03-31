@@ -1,4 +1,4 @@
-package CreazyStation;
+package CrazyStation;
 
 public class Car {
     private int carID;

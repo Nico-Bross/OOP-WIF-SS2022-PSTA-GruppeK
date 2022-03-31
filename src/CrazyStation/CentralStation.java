@@ -1,28 +1,29 @@
-package CreazyStation;
+package CrazyStation;
 
-public class Station {
-    private Car[] storage;
-    private Train[] trains;
-    private String name;
+public class CentralStation{
 
-    public Station(String name){
+    public CentralStation(String name){
         this.name = name;
         storage = new Car[1];
         trains = new Train[1];
     }
 
-    public Station(String name, Train train){
+    public CentralStation(String name, Train train){
         this.name = name;
         storage = new Car[1];
         trains = new Train[1];
         trains [1] = train;
     }
 
-    public Station(String name, Train[] trains){
+    public CentralStation(String name, Train[] trains){
         this.name = name;
         storage = new Car[1];
         this.trains = trains;
     }
+
+    private Car[] storage;
+    private Train[] trains;
+    private String name;
 
     public void addTrain (Train c) {
         if (trains[0] == null) {
@@ -111,4 +112,32 @@ public class Station {
     public Train[] getTrains ()  { return trains; }
 
     public String getName() { return name; }
+
+    public void distributeCars (){
+        Car[] notDistributable = new Car[1];
+        while (storage.length != 0){
+            Car c = removeCar();
+            for (Train t: getTrains()){
+                if (t.getStation().getName() == c.getTarget().getName()){
+                    if (t.addCar(c)){
+                        break;
+                    } else {
+                        if (c != null){
+                            if (notDistributable[0] == null) {
+                                notDistributable[0] = c;
+                            } else {
+                                Car[] newArray = new Car[notDistributable.length + 1];
+                                for (int i = 0; i < notDistributable.length; i++) {
+                                    newArray[i] = notDistributable[i];
+                                }
+                                newArray[notDistributable.length] = c;
+                                notDistributable = newArray;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        storage = new Car[1];
+    }
 }

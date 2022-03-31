@@ -1,4 +1,4 @@
-package CreazyStation;
+package CrazyStation;
 
 public class CrazyStation {
     public static void main (String[] args){
