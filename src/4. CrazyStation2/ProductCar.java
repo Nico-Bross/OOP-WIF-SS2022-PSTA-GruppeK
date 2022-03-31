@@ -1,4 +1,4 @@
-package CrazyStation;
+package CrazyStation2;
 
 public class ProductCar extends Car{
 

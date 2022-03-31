@@ -1,4 +1,4 @@
-package CrazyStation;
+package CrazyStation2;
 
 public abstract class Train {
     private Station station;

@@ -1,6 +1,6 @@
-package CrazyStation;
+package CrazyStation2;
 
-public class CrazyStation {
+public class CrazyStation2 {
     public static void main (String[] args){
 
         // Setup
