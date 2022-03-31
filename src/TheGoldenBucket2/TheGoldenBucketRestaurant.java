@@ -1,8 +1,5 @@
 package TheGoldenBucket2;
 
-import TheGoldenBucket2.Customer;
-import TheGoldenBucket2.Drink;
-
 public class TheGoldenBucketRestaurant {
     public static void main(String[] args) {
         Customer max = new Customer("Maxwell Powers");

@@ -1,6 +1,6 @@
 package TheGoldenBucket2;
 
-import TheGoldenBucket2.Customer;
+
 
 public class Reservation {
     private Customer c;
