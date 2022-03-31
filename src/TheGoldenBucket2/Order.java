@@ -6,9 +6,12 @@ public class Order {
     private Reservation r;
     private ListDrinks drinks;
     private ListFoods foods;
+    private static int orderCounter = 0;
 
-    public Order(int id){
-        orderId = id;
+
+    public Order(){
+        orderCounter++;
+        orderId = orderCounter;
         drinks= new ListDrinksImpl();
         foods = new ListFoodsImpl();
     }

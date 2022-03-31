@@ -8,8 +8,8 @@ public class TheGoldenBucketRestaurant {
         Employee lois = new Employee("Lois Griffin","Cook");
 
         // Later that evening Maxwell Powers likes to order some food and drinks
-        Order o1 = new Order(1);
-        Order o2 = new Order (2);
+        Order o1 = new Order();
+        Order o2 = new Order ();
         Drink coke = new Drink ("Coke",395);
         Drink cocktail  = new Drink ("Negroni Cocktail",870);
         Food magherita = new Food ("Pizza Magherita", 1050);
