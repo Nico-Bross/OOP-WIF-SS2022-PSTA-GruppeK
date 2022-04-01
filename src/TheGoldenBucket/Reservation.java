@@ -34,4 +34,7 @@ public class Reservation {
 }
 
 //Test-Kommentar
+
+//Hallo zurück
 //Hallo Wie gehts
+//Gut wie ist das Wetter bei dir?
