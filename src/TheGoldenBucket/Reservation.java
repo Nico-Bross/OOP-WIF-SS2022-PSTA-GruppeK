@@ -7,8 +7,20 @@ public class Reservation {
     Employee waiter;
     Order[] orders;
 
+    public Reservation(){}
+
+    public Reservation(Customer c, String time, String date){
+        this.c = c;
+        this.time = time;
+        this.date = date;
+    }
+
+    void addWaiter(Employee e){
+        this.waiter = e;
+    }
+
     void addOrder(Order o){
-        Utilities.enlargeOrderArray(orders);
-        orders[orders.length]=o;
+        this.orders = Utilities.enlargeOrderArray(orders);
+        orders[orders.length-1]=o;
     }
 }
