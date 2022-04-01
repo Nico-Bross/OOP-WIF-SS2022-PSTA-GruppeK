@@ -14,7 +14,7 @@ public class Reservation {
         this.waiter = waiter;
         orders = new Order[0];
     }
-
+    /*test hallo*/
     void addOrder(Order o){
         Utilities.enlargeOrderArray(orders);
         orders[orders.length]=o;
