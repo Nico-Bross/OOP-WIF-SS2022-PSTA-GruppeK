@@ -4,9 +4,10 @@ public class Drink {
     String name;
     float price;
 
-    public Drink(){}
+    public Drink() {
+    }
 
-    public Drink(String name, float price){
+    public Drink(String name, float price) {
         this.name = name;
         this.price = price;
     }
@@ -23,3 +24,4 @@ public class Drink {
         this.price = price;
         this.name = name;
     }
+}

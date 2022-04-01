@@ -1,25 +1,19 @@
 package TheGoldenBucket;
 
-public class Drink {
+public class Customer {
     String name;
-    float price;
 
-    public Drink(){}
+    public Customer(){}
 
-    public Drink(String name, float price){
+    public Customer(String name){
         this.name = name;
-        this.price = price;
     }
 
     public String getName() {
         return name;
     }
 
-    public float getPrice() {
-        return price;
-    }
-
-    public void setDrinks(String name, float price) {
-        this.price = price;
+    public void setName(String name) {
         this.name = name;
     }
+}
