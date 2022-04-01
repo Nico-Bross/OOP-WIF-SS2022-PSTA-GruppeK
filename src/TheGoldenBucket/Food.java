@@ -8,12 +8,9 @@ public class Food {
         this.name = name;
         this.price = price;
     }
+
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getPrice() {
@@ -22,5 +19,9 @@ public class Food {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

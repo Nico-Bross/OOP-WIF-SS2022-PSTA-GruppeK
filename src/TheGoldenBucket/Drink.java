@@ -2,26 +2,26 @@ package TheGoldenBucket;
 
 public class Drink {
     private String name;
-    private int price;
+     private int price;
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
 
     public Drink(String name, int price){
-        this.name = name;
-        this.price = price;
-    }
+         this.name = name;
+         this.price = price;
+     }
 
-    public int getPrice(){
+    public int getPrice() {
         return price;
     }
-    public void setPrice(int price){
-        this.price = price;
-    }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
-    public void setName(String name){
+
+    public void setName(String name) {
         this.name = name;
     }
-
-
 }

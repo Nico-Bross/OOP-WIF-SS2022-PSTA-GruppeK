@@ -7,20 +7,20 @@ public class Reservation {
     private Employee waiter;
     private Order[] orders;
 
-    public Reservation(Customer c, String time, String date, Employee waiter){
+    public Reservation(Customer c , String time, String date, Employee waiter){
         this.c = c;
         this.time = time;
         this.date = date;
         this.waiter = waiter;
         orders = new Order[0];
     }
-    /*test hallo*/
+
     void addOrder(Order o){
         Utilities.enlargeOrderArray(orders);
-        orders[orders.length]=o;
+        orders[orders.length-1]=o;
     }
 
-    public String getTime(){
+    public String getTime() {
         return time;
     }
 
@@ -31,8 +31,10 @@ public class Reservation {
     public Employee getWaiter() {
         return waiter;
     }
-
-    public Customer getC() {
-        return c;
-    }
 }
+
+//Test-Kommentar
+
+//Hallo zurück
+//Hallo Wie gehts
+//Gut wie ist das Wetter bei dir?
