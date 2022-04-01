@@ -39,3 +39,4 @@ public class Reservation {
 //Hallo Wie gehts
 //Gut wie ist das Wetter bei dir?
 //Hallo Hier ist Marinus alles klar?
+//Nein hier siehts trüb aus
