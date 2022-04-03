@@ -5,29 +5,29 @@ import TheGoldenBucket2.Inter.ListFoods;
 
 public class ListFoodsImpl implements ListFoods {
 
-    private ListFoodsImpl.ListElement first;
+    private ListElement first;
 
-    public class ListElement {
+    public static class ListElement {
         Food f;
-        ListFoodsImpl.ListElement next;
-        ListElement (Food current, ListFoodsImpl.ListElement next){
+        ListElement next;
+        ListElement(Food current, ListElement next) {
             this.next = next;
             this.f = current;
         }
     }
 
     public boolean add(Food addFood) {
-        ListFoodsImpl.ListElement e = new ListFoodsImpl.ListElement(addFood,null);
+        ListElement e = new ListElement(addFood, null);
 
-        if (first == null){
+        if (first == null) {
             first = e;
             return true;
         }
 
-        ListFoodsImpl.ListElement current = first;
+        ListElement current = first;
 
-        while (current.next != null){
-            if (current.f == addFood){
+        while (current.next != null) {
+            if (current.f == addFood) {
                 return true;
             } else {
                 current = current.next;
@@ -38,14 +38,14 @@ public class ListFoodsImpl implements ListFoods {
     }
 
     public boolean contains(Food checkFood) {
-        if (first == null){
+        if (first == null) {
             return false;
         }
 
-        ListFoodsImpl.ListElement current = first;
+        ListElement current = first;
 
-        while (current.next != null){
-            if (current.f == checkFood){
+        while (current.next != null) {
+            if (current.f == checkFood) {
                 return true;
             } else {
                 current = current.next;
@@ -56,19 +56,19 @@ public class ListFoodsImpl implements ListFoods {
 
     public boolean remove(Food f) {
 
-        if (first == null){
+        if (first == null) {
             return false;
         }
 
-        if (first.f == f){
+        if (first.f == f) {
             first = first.next;
             return true;
         }
 
-        ListFoodsImpl.ListElement current = first;
+        ListElement current = first;
 
-        while (current.next != null){
-            if (current.next.f == f){
+        while (current.next != null) {
+            if (current.next.f == f) {
                 current.next = current.next.next;
                 return true;
             } else {
@@ -81,17 +81,17 @@ public class ListFoodsImpl implements ListFoods {
     public int size() {
         int i = 1;
 
-        ListFoodsImpl.ListElement current = first;
+        ListElement current = first;
 
         while (current.next != null) {
             i++;
             current = current.next;
 
         }
-        return i++;
+        return i;
     }
 
-    public ListFoodsImpl.ListElement getFirst (){
+    public ListElement getFirst () {
         return first;
     }
 }

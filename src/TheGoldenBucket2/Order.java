@@ -1,30 +1,25 @@
 package TheGoldenBucket2;
 
-import TheGoldenBucket2.Help.Customer;
-import TheGoldenBucket2.Help.Drink;
-import TheGoldenBucket2.Help.Food;
-import TheGoldenBucket2.Inter.ListDrinks;
-import TheGoldenBucket2.Inter.ListFoods;
+import TheGoldenBucket2.Help.*;
+import TheGoldenBucket2.Inter.*;
 
 public class Order {
 
     private int orderId;
-    private Customer c;
-    private Reservation r;
     private ListDrinks drinks;
     private ListFoods foods;
 
-    public Order(int id){
+    public Order(int id, ListDrinks ld, ListFoods lf) {
         orderId = id;
-        drinks = new ListDrinksImpl();
-        foods = new ListFoodsImpl();
+        drinks = ld;
+        foods = lf;
     }
 
-    public int getFoodNumber (){
+    public int getFoodNumber() {
         return foods.size();
     }
 
-    public int getDrinkNumber (){
+    public int getDrinkNumber() {
         return drinks.size();
     }
 
@@ -40,11 +35,11 @@ public class Order {
         return foods;
     }
 
-    public void addFood (Food f){
+    public void addFood(Food f) {
         foods.add(f);
     }
 
-    public void addDrink (Drink d){
+    public void addDrink(Drink d) {
         drinks.add(d);
     }
 }

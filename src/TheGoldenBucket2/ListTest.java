@@ -7,7 +7,9 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ListTest {
     @Test
     public void listTestMethod() {
+
         ListDrinksImpl impl = new ListDrinksImpl();
+
         Drink a = new Drink ("a", 1);
         Drink b = new Drink ("b", 2);
         Drink c = new Drink ("c", 3);
@@ -34,5 +36,4 @@ public class ListTest {
         assertFalse(impl.contains(b));
         assertTrue(impl.contains(c));
     }
-
 }

@@ -5,29 +5,29 @@ import TheGoldenBucket2.Inter.ListDrinks;
 
 public class ListDrinksImpl implements ListDrinks {
 
-    private ListDrinksImpl.ListElement first;
+    private ListElement first;
 
-    public class ListElement {
+    public static class ListElement {
         Drink d;
-        ListDrinksImpl.ListElement next;
-        ListElement (Drink current, ListElement next){
+        ListElement next;
+        ListElement(Drink current, ListElement next) {
             this.next = next;
             this.d = current;
         }
     }
 
     public boolean add(Drink addDrink) {
-        ListDrinksImpl.ListElement e = new ListDrinksImpl.ListElement(addDrink,null);
+        ListElement e = new ListElement(addDrink, null);
 
-        if (first == null){
+        if (first == null) {
             first = e;
             return true;
         }
 
-        ListDrinksImpl.ListElement current = first;
+        ListElement current = first;
 
-        while (current.next != null){
-            if (current.d == addDrink){
+        while (current.next != null) {
+            if (current.d == addDrink) {
                 return true;
             } else {
                 current = current.next;
@@ -38,14 +38,14 @@ public class ListDrinksImpl implements ListDrinks {
     }
 
     public boolean contains(Drink checkDrink) {
-        if (first == null){
+        if (first == null) {
             return false;
         }
 
-        ListDrinksImpl.ListElement current = first;
+        ListElement current = first;
 
-        while (current.next != null){
-            if (current.d == checkDrink){
+        while (current.next != null) {
+            if (current.d == checkDrink) {
                 return true;
             } else {
                 current = current.next;
@@ -56,19 +56,19 @@ public class ListDrinksImpl implements ListDrinks {
 
     public boolean remove(Drink d) {
 
-        if (first == null){
+        if (first == null) {
             return false;
         }
 
-        if (first.d == d){
+        if (first.d == d) {
             first = first.next;
             return true;
         }
 
-        ListDrinksImpl.ListElement current = first;
+        ListElement current = first;
 
-        while (current.next != null){
-            if (current.next.d == d){
+        while (current.next != null) {
+            if (current.next.d == d) {
                 current.next = current.next.next;
                 return true;
             } else {
@@ -81,16 +81,16 @@ public class ListDrinksImpl implements ListDrinks {
     public int size() {
         int i = 1;
 
-        ListDrinksImpl.ListElement current = first;
+        ListElement current = first;
 
         while (current.next != null) {
             i++;
             current = current.next;
         }
-        return i++;
+        return i;
     }
 
-    public ListDrinksImpl.ListElement getFirst (){
+    public ListElement getFirst () {
         return first;
     }
 }

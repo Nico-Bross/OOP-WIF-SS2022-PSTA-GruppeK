@@ -4,29 +4,29 @@ import TheGoldenBucket2.Inter.ListOrders;
 
 public class ListOrdersImpl implements ListOrders {
 
-    private ListOrdersImpl.ListElement first;
+    private ListElement first;
 
-    public class ListElement {
+    public static class ListElement {
         Order o;
-        ListOrdersImpl.ListElement next;
-        ListElement (Order current, ListOrdersImpl.ListElement next){
+        ListElement next;
+        ListElement(Order current, ListElement next) {
             this.next = next;
             this.o = current;
         }
     }
 
     public boolean add(Order addOrder) {
-        ListOrdersImpl.ListElement e = new ListOrdersImpl.ListElement(addOrder,null);
+        ListElement e = new ListElement(addOrder, null);
 
-        if (first == null){
+        if (first == null) {
             first = e;
             return true;
         }
 
-        ListOrdersImpl.ListElement current = first;
+        ListElement current = first;
 
-        while (current.next != null){
-            if (current.o.getOrderId() == addOrder.getOrderId()){
+        while (current.next != null) {
+            if (current.o.getOrderId() == addOrder.getOrderId()) {
                 return true;
             } else {
                 current = current.next;
@@ -37,14 +37,14 @@ public class ListOrdersImpl implements ListOrders {
     }
 
     public boolean contains(Order checkOrder) {
-        if (first == null){
+        if (first == null) {
             return false;
         }
 
-        ListOrdersImpl.ListElement current = first;
+        ListElement current = first;
 
-        while (current.next != null){
-            if (current.o.getOrderId() == checkOrder.getOrderId()){
+        while (current.next != null) {
+            if (current.o.getOrderId() == checkOrder.getOrderId()) {
                 return true;
             } else {
                 current = current.next;
@@ -55,19 +55,19 @@ public class ListOrdersImpl implements ListOrders {
 
     public boolean remove(Order o) {
 
-        if (first == null){
+        if (first == null) {
             return false;
         }
 
-        if (first.o.getOrderId() == o.getOrderId()){
+        if (first.o.getOrderId() == o.getOrderId()) {
             first = first.next;
             return true;
         }
 
-        ListOrdersImpl.ListElement current = first;
+        ListElement current = first;
 
-        while (current.next != null){
-            if (current.next.o.getOrderId() == o.getOrderId()){
+        while (current.next != null) {
+            if (current.next.o.getOrderId() == o.getOrderId()) {
                 current.next = current.next.next;
                 return true;
             } else {
@@ -80,16 +80,16 @@ public class ListOrdersImpl implements ListOrders {
     public int size() {
         int i = 1;
 
-        ListOrdersImpl.ListElement current = first;
+        ListElement current = first;
 
         while (current.next != null) {
             i++;
             current = current.next;
         }
-        return i++;
+        return i;
     }
 
-    public ListOrdersImpl.ListElement getFirst (){
+    public ListElement getFirst () {
         return first;
     }
 }

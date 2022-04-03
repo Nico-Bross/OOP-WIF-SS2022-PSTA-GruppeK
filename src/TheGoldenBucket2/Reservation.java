@@ -1,7 +1,6 @@
 package TheGoldenBucket2;
 
-import TheGoldenBucket2.Help.Customer;
-import TheGoldenBucket2.Help.Employee;
+import TheGoldenBucket2.Help.*;
 import TheGoldenBucket2.Inter.ListOrders;
 
 public class Reservation {
@@ -12,7 +11,7 @@ public class Reservation {
     private Employee waiter;
     private ListOrders orders;
 
-    Reservation (Customer c, String time, String date, Employee waiter){
+    Reservation(Customer c, String time, String date, Employee waiter) {
         this.c = c;
         this.time = time;
         this.date = date;
@@ -20,39 +19,27 @@ public class Reservation {
         this.orders = new ListOrdersImpl();
     }
 
-    public String getTime (){
+    public void addOrder(Order o) {
+        orders.add(o);
+    }
+
+    public Customer getCustomer() {
+        return c;
+    }
+
+    public String getTime() {
         return time;
     }
 
-    public void setTime (String time){
-        this.time = time;
-    }
-
-    public String getDate (){
+    public String getDate() {
         return date;
     }
 
-    public void setDate (String date){
-        this.date = date;
-    }
-
-    public Employee getEmployee (){
+    public Employee getEmployee() {
         return waiter;
     }
 
-    public void setEmployee (Employee waiter){
-        this.waiter = waiter;
-    }
-
-    public boolean addOrder (Order o){
-        return orders.add(o);
-    }
-
-    public ListOrders getOrders (){
+    public ListOrders getOrders() {
         return orders;
-    }
-
-    public Customer getCustomer (){
-        return c;
     }
 }
