@@ -58,10 +58,9 @@ public class TheGoldenBucketRestaurant {
             }
             currentOrder = currentOrder.next;
         }
-        System.out.println("Total Number of Drinks: "+ TotalNumberOfDrinks);
+        System.out.println("\n" +"Total Number of Drinks: "+ TotalNumberOfDrinks);
         System.out.println("Total Number of Foods: "+ TotalNumberOfFoods);
-        System.out.println("Total Price: "+ price);
-        System.out.println();
+        System.out.println("Total Price: "+ price +"\n");
         System.out.println("Your waiter was "+maxReservation.getEmployee().getName());
     }
 }

@@ -5,7 +5,7 @@ public class Drink {
     private int price;
 
     public Drink (String name, int price){
-        this.name = name;
+        this.name = String.format("%-" + 20 + "s", name); //Siehe Comment bei Food "LM
         this.price = price;
     }
 
