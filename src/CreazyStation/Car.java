@@ -13,7 +13,7 @@ public class Car {
         this.nextCar = null;
     }
 
-    public Car(){};
+
 
     public String toString (){
         return "CarID: " + carID + "\tStart: " + start.getName() +
