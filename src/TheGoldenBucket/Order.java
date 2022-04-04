@@ -1,9 +1,9 @@
 package TheGoldenBucket;
 
 public class Order {
-    Customer c;
+    Customer c =;           //Referenzen zu dem Customer - evtl. ne Liste erstellen
     Reservation r;
-    Drink[] drinks;
+    Drink[] drinks;         // Drinks Liste erstellen, um Getränke hinzuzufügen oder entfernen
     Food[] foods;
     int number_of_drinks;
     int number_of_foods;
