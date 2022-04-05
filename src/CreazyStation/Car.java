@@ -1,9 +1,9 @@
 package CreazyStation;
 
 public class Car {
-    private int carID;
-    private Station start;
-    private Station target;
+    private final int carID;
+    private final Station start;
+    private final Station target;
 
     public Car(int carID, Station start, Station target){
         this.carID = carID;
@@ -11,16 +11,16 @@ public class Car {
         this.target = target;
     }
 
-    public Car(){};
+    //public Car(){};
 
     public String toString (){
         return "CarID: " + carID + "\tStart: " + start.getName() +
                 "\tTarget: " + target.getName();
     }
 
-    public int getCarID (){ return carID; }
+    //public int getCarID (){ return carID; }
 
-    public Station getStart () { return start; }
+    // public Station getStart () { return start; }
 
     public Station getTarget () { return target; }
 

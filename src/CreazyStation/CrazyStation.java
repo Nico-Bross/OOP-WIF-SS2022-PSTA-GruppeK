@@ -58,10 +58,10 @@ public class CrazyStation {
         berlin.addCar(c14);
 
         System.out.println("__________________Situation at the beginning of the day__________________");
-        System.out.println(hamburg.toString());
-        System.out.println(berlin.toString());
-        System.out.println(munich.toString());
-        System.out.println(cologne.toString());
+        System.out.println(hamburg);
+        System.out.println(berlin);
+        System.out.println(munich);
+        System.out.println(cologne);
 
         // Cars get attached to the available trains on those routes
         hamburg.loadTrains();
@@ -72,7 +72,7 @@ public class CrazyStation {
         // Cars get transported from Stations to CentralStation Frankfurt
         frankfurt.unloadTrains();
         System.out.println("__________________Cars transported to the Central Station__________________");
-        System.out.println(frankfurt.toString());
+        System.out.println(frankfurt);
         frankfurt.distributeCars();
 
         // Trains drive with the new attached cars back to the stations
@@ -84,10 +84,10 @@ public class CrazyStation {
         // Lets check if all possible cars are at the right station
 
         System.out.println("__________________transported Cars__________________");
-        System.out.println(hamburg.toString());
-        System.out.println(berlin.toString());
-        System.out.println(munich.toString());
-        System.out.println(cologne.toString());
+        System.out.println(hamburg);
+        System.out.println(berlin);
+        System.out.println(munich);
+        System.out.println(cologne);
 
     }
 }

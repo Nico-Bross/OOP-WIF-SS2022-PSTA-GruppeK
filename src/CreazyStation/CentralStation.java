@@ -1,6 +1,13 @@
 package CreazyStation;
 
+import java.util.Objects;
+
 public class CentralStation{
+
+    private Car[] storage;
+    private Train[] trains;
+    private final String name;
+
 
     public CentralStation(String name){
         this.name = name;
@@ -12,7 +19,7 @@ public class CentralStation{
         this.name = name;
         storage = new Car[1];
         trains = new Train[1];
-        trains [1] = train;
+        trains [0] = train;
     }
 
     public CentralStation(String name, Train[] trains){
@@ -21,18 +28,12 @@ public class CentralStation{
         this.trains = trains;
     }
 
-    private Car[] storage;
-    private Train[] trains;
-    private String name;
-
     public void addTrain (Train c) {
         if (trains[0] == null) {
             trains[0] = c;
         } else {
             Train[] newArray = new Train[trains.length + 1];
-            for (int i = 0; i < trains.length; i++) {
-                newArray[i] = trains[i];
-            }
+            System.arraycopy(trains, 0, newArray, 0, trains.length);
             newArray[trains.length] = c;
             trains = newArray;
         }
@@ -44,9 +45,7 @@ public class CentralStation{
             return true;
         } else {
             Car[] newArray = new Car[storage.length+1];
-            for (int i = 0; i < storage.length; i++ ){
-                newArray[i] = storage[i];
-            }
+            System.arraycopy(storage, 0, newArray, 0, storage.length);
             newArray [storage.length] = c;
             storage = newArray;
             return true;
@@ -59,9 +58,7 @@ public class CentralStation{
         }
         Car car = storage[storage.length-1];
         Car[] newArray = new Car[storage.length-1];
-        for (int i = 0; i < storage.length-1; i++ ){
-            newArray[i] = storage[i];
-        }
+        System.arraycopy(storage, 0, newArray, 0, storage.length - 1);
         storage = newArray;
         return car;
     }
@@ -95,12 +92,12 @@ public class CentralStation{
     }
 
     public String toString () {
-        String s;
-        s = name + ":\n";
+        StringBuilder s;
+        s = new StringBuilder(name + ":\n");
         for (Car c: storage){
-            s += c.toString() + "\n";
+            s.append(c.toString()).append("\n");
         }
-        return s;
+        return s.toString();
     }
 
     public Car[] getStorage (){return storage; }
@@ -118,21 +115,17 @@ public class CentralStation{
         while (storage.length != 0){
             Car c = removeCar();
             for (Train t: getTrains()){
-                if (t.getStation().getName() == c.getTarget().getName()){
+                if (Objects.equals(t.getStation().getName(), c.getTarget().getName())){
                     if (t.addCar(c)){
                         break;
                     } else {
-                        if (c != null){
-                            if (notDistributable[0] == null) {
-                                notDistributable[0] = c;
-                            } else {
-                                Car[] newArray = new Car[notDistributable.length + 1];
-                                for (int i = 0; i < notDistributable.length; i++) {
-                                    newArray[i] = notDistributable[i];
-                                }
-                                newArray[notDistributable.length] = c;
-                                notDistributable = newArray;
-                            }
+                        if (notDistributable[0] == null) {
+                            notDistributable[0] = c;
+                        } else {
+                            Car[] newArray = new Car[notDistributable.length + 1];
+                            System.arraycopy(notDistributable, 0, newArray, 0, notDistributable.length);
+                            newArray[notDistributable.length] = c;
+                            notDistributable = newArray;
                         }
                     }
                 }

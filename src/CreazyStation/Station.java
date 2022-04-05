@@ -3,7 +3,7 @@ package CreazyStation;
 public class Station {
     private Car[] storage;
     private Train[] trains;
-    private String name;
+    private final String name;
 
     public Station(String name){
         this.name = name;
@@ -15,7 +15,7 @@ public class Station {
         this.name = name;
         storage = new Car[1];
         trains = new Train[1];
-        trains [1] = train;
+        trains [0] = train;
     }
 
     public Station(String name, Train[] trains){
@@ -29,9 +29,7 @@ public class Station {
             trains[0] = c;
         } else {
             Train[] newArray = new Train[trains.length + 1];
-            for (int i = 0; i < trains.length; i++) {
-                newArray[i] = trains[i];
-            }
+            System.arraycopy(trains, 0, newArray, 0, trains.length);
             newArray[trains.length] = c;
             trains = newArray;
         }
@@ -43,9 +41,7 @@ public class Station {
             return true;
         } else {
             Car[] newArray = new Car[storage.length+1];
-            for (int i = 0; i < storage.length; i++ ){
-                newArray[i] = storage[i];
-            }
+            System.arraycopy(storage, 0, newArray, 0, storage.length);
             newArray [storage.length] = c;
             storage = newArray;
             return true;
@@ -58,9 +54,7 @@ public class Station {
         }
         Car car = storage[storage.length-1];
         Car[] newArray = new Car[storage.length-1];
-        for (int i = 0; i < storage.length-1; i++ ){
-            newArray[i] = storage[i];
-        }
+        System.arraycopy(storage, 0, newArray, 0, storage.length - 1);
         storage = newArray;
         return car;
     }
@@ -94,12 +88,12 @@ public class Station {
     }
 
     public String toString () {
-        String s;
-        s = name + ":\n";
+        StringBuilder s;
+        s = new StringBuilder(name + ":\n");
         for (Car c: storage){
-            s += c.toString() + "\n";
+            s.append(c.toString()).append("\n");
         }
-        return s;
+        return s.toString();
     }
 
     public Car[] getStorage (){return storage; }
