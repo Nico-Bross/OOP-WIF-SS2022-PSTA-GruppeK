@@ -1,7 +1,7 @@
 package TheGoldenBucket;
 
 public class Order {
-    Customer c =;           //Referenzen zu dem Customer - evtl. ne Liste erstellen
+    Customer c ;           //Referenzen zu dem Customer - evtl. ne Liste erstellen
     Reservation r;
     Drink[] drinks;         // Drinks Liste erstellen, um Getränke hinzuzufügen oder entfernen
     Food[] foods;
@@ -17,7 +17,7 @@ public class Order {
 
     void addDrink(Drink d){
         Utilities.enlargeDrinkArray(drinks);
-        drinks[drinks.length]=d;
+        drinks[drinks.length-1]=d;
         number_of_drinks++;
     }
 
