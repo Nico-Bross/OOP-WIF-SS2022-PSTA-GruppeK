@@ -12,7 +12,6 @@ public class Order {
         drinks= new Drink[0];
         foods = new Food[0];
         number_of_drinks=0;
-        number_of_drinks=0;
     }
 
     void addDrink(Drink d){
