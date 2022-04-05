@@ -53,22 +53,21 @@ public class TheGoldenBucketRestaurant {
         while (currentOrder != null) {
             TotalNumberOfDrinks += currentOrder.o.getDrinkNumber();
             TotalNumberOfFoods += currentOrder.o.getFoodNumber();
-            System.out.println();
             System.out.println("OrderId: "+ currentOrder.o.getOrderId());
 
             System.out.println("Drinks:");
             ListDrinksImpl.ListElement currentDrink = currentOrder.o.getDrinks().getFirst();
             while (currentDrink != null) {
-                System.out.println("\t"+currentDrink.d.getName()+"\t\t\t"+currentDrink.d.getPrice());
                 price += currentDrink.d.getPrice();
+                System.out.println("\t"+currentDrink.d.getName()+"\t\t\t"+currentDrink.d.getPrice());
                 currentDrink = currentDrink.next;
             }
 
             System.out.println("Foods:");
             ListFoodsImpl.ListElement currentFood = currentOrder.o.getFoods().getFirst();
             while (currentFood != null) {
-                System.out.println("\t"+currentFood.f.getName()+"\t\t\t"+currentFood.f.getPrice());
                 price += currentFood.f.getPrice();
+                System.out.println("\t"+currentFood.f.getName()+"\t\t\t"+currentFood.f.getPrice());
                 currentFood = currentFood.next;
             }
 
