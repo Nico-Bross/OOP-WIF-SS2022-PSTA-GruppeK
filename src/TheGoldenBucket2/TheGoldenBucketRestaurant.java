@@ -9,32 +9,32 @@ public class TheGoldenBucketRestaurant {
 
         Customer max = new Customer("Maxwell Powers");
         Employee peter = new Employee("Peter Griffin","Waiter");
+
         Reservation maxReservation = new Reservation(max,"8pm", "31.03.2022", peter);
 
         ListDrinks ld = new ListDrinksImpl();
         ListFoods lf = new ListFoodsImpl();
-        ListOrders lo = new ListOrdersImpl();
 
         // Later that evening Maxwell Powers likes to order some food and drinks
-        Drink[] drinks = { new Drink ("Coke            ",395),
-                           new Drink ("Negroni Cocktail",870) };
-        Food[] foods = { new Food ("Pizza Magherita    ", 1050),
-                         new Food ("Antipasti Selection", 970),
-                         new Food ("Pizza Salami       ", 1130) };
-        for (Drink d: drinks) {
-            ld.add(d);
-        }
-        for (Food f: foods) {
-            lf.add(f);
-        }
+        Drink[][] drinks = { new Drink[] { new Drink("Coke            ",395) },
+                             new Drink[] { new Drink("Negroni Cocktail",870) } };
+        Food[][] foods = { new Food[] { new Food("Pizza Magherita    ", 1050) },
+                           new Food[] { new Food("Antipasti Selection", 970),
+                                        new Food("Pizza Salami       ", 1130) } };
 
-        Order[] orders = { new Order (1, ld, lf),
-                           new Order (2, ld, lf) };
-        for (Order o: orders) {
-            lo.add(o);
-        }
-        for (Order o: orders) {
-            maxReservation.addOrder(o);
+        // Filling the Drinks/Foods Lists and adding a new Order to the Reservation
+        int i = 0;
+        while (i < drinks.length) {
+            for (Drink d : drinks[i]) {
+                ld.add(d);
+            }
+            for (Food f : foods[i]) {
+                lf.add(f);
+            }
+            i++;
+            maxReservation.addOrder(new Order(i, ld, lf));
+            ld = new ListDrinksImpl();
+            lf = new ListFoodsImpl();
         }
 
 
@@ -51,28 +51,28 @@ public class TheGoldenBucketRestaurant {
         int TotalNumberOfDrinks = 0;
 
         while (currentOrder != null) {
-            TotalNumberOfDrinks += currentOrder.o.getDrinkNumber();
-            TotalNumberOfFoods += currentOrder.o.getFoodNumber();
             System.out.println();
-            System.out.println("OrderId: "+ currentOrder.o.getOrderId());
+            System.out.println("OrderId: "+ currentOrder.getO().getOrderId());
 
             System.out.println("Drinks:");
-            ListDrinksImpl.ListElement currentDrink = currentOrder.o.getDrinks().getFirst();
+            ListDrinksImpl.ListElement currentDrink = currentOrder.getO().getDrinks().getFirst();
             while (currentDrink != null) {
-                System.out.println("\t"+currentDrink.d.getName()+"\t\t\t"+currentDrink.d.getPrice());
-                price += currentDrink.d.getPrice();
-                currentDrink = currentDrink.next;
+                System.out.println("\t"+currentDrink.getD().getName()+"\t\t\t"+currentDrink.getD().getPrice());
+                price += currentDrink.getD().getPrice();
+                currentDrink = currentDrink.getNext();
             }
 
             System.out.println("Foods:");
-            ListFoodsImpl.ListElement currentFood = currentOrder.o.getFoods().getFirst();
+            ListFoodsImpl.ListElement currentFood = currentOrder.getO().getFoods().getFirst();
             while (currentFood != null) {
-                System.out.println("\t"+currentFood.f.getName()+"\t\t\t"+currentFood.f.getPrice());
-                price += currentFood.f.getPrice();
-                currentFood = currentFood.next;
+                System.out.println("\t"+currentFood.getF().getName()+"\t\t\t"+currentFood.getF().getPrice());
+                price += currentFood.getF().getPrice();
+                currentFood = currentFood.getNext();
             }
 
-            currentOrder = currentOrder.next;
+            TotalNumberOfFoods += currentOrder.getO().getFoodNumber();
+            TotalNumberOfDrinks += currentOrder.getO().getDrinkNumber();
+            currentOrder = currentOrder.getNext();
         }
 
         System.out.println("\nTotal Number of Drinks: "+ TotalNumberOfDrinks);

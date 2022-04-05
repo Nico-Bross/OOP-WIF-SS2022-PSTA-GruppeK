@@ -8,11 +8,18 @@ public class ListFoodsImpl implements ListFoods {
     private ListElement first;
 
     public static class ListElement {
-        Food f;
-        ListElement next;
+        private Food f;
+        private ListElement next;
         ListElement(Food current, ListElement next) {
             this.next = next;
             this.f = current;
+        }
+
+        public Food getF() {
+            return f;
+        }
+        public ListElement getNext() {
+            return next;
         }
     }
 
@@ -86,7 +93,6 @@ public class ListFoodsImpl implements ListFoods {
         while (current.next != null) {
             i++;
             current = current.next;
-
         }
         return i;
     }

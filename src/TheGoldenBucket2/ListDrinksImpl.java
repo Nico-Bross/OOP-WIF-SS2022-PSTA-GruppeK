@@ -8,11 +8,18 @@ public class ListDrinksImpl implements ListDrinks {
     private ListElement first;
 
     public static class ListElement {
-        Drink d;
-        ListElement next;
+        private Drink d;
+        private ListElement next;
         ListElement(Drink current, ListElement next) {
             this.next = next;
             this.d = current;
+        }
+
+        public Drink getD() {
+            return d;
+        }
+        public ListElement getNext() {
+            return next;
         }
     }
 

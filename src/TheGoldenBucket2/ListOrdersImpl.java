@@ -7,11 +7,18 @@ public class ListOrdersImpl implements ListOrders {
     private ListElement first;
 
     public static class ListElement {
-        Order o;
-        ListElement next;
+        private Order o;
+        private ListElement next;
         ListElement(Order current, ListElement next) {
             this.next = next;
             this.o = current;
+        }
+
+        public Order getO() {
+            return o;
+        }
+        public ListElement getNext() {
+            return next;
         }
     }
 

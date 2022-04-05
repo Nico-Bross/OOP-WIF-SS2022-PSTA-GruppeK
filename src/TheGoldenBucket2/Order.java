@@ -1,6 +1,5 @@
 package TheGoldenBucket2;
 
-import TheGoldenBucket2.Help.*;
 import TheGoldenBucket2.Inter.*;
 
 public class Order {
@@ -33,13 +32,5 @@ public class Order {
 
     public ListFoods getFoods() {
         return foods;
-    }
-
-    public void addFood(Food f) {
-        foods.add(f);
-    }
-
-    public void addDrink(Drink d) {
-        drinks.add(d);
     }
 }
