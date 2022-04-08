@@ -12,6 +12,13 @@ public class Food {
         return price;
     }
 
+    public Food(){}
+
+    public Food(String name, float price){
+        this.name = name;
+        this.price = price;
+    }
+
     public void setFood(String name, float price) {
         this.name = name;
         this.price = price;
