@@ -4,15 +4,13 @@ public class TheGoldenBucketRestaurant {
     public static void main(String[] args) {
         Customer max = new Customer("Maxwell Powers");
 
-        Reservation maxReservation = new Reservation();
-        maxReservation.c=max;
-        maxReservation.date="31.03.2022";
-        maxReservation.time="8pm";
+        Reservation maxReservation = new Reservation("Max", "8pm", "31.03.2022","", );
+
 
         Employee peter = new Employee("Peter Griffin","Waiter");
         Employee lois = new Employee("Lois Griffin","Cook");
 
-        maxReservation.waiter=peter;
+
 
         // Later that evening Maxwell Powers likes to order some food and drinks
         Order o = new Order();
