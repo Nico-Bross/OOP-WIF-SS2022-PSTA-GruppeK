@@ -1,2 +1,3 @@
-OOP.iml
+*.iml
 .idea/
+out
