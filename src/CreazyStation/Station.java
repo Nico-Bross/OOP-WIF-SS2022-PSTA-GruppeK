@@ -2,9 +2,9 @@ package CreazyStation;
 
 public class Station {
 
-    private Car[] storage;
-    private Train[] trains;
-    private String name;
+    protected Car[] storage;
+    protected Train[] trains;
+    protected String name;
 
     public Station(String name) {
         this.name = name;
@@ -12,27 +12,12 @@ public class Station {
         trains = new Train[1];
     }
 
-    public Station(String name, Train train) {
-        this.name = name;
-        storage = new Car[1];
-        trains = new Train[1];
-        trains[0] = train;
-    }
-
-    public Station(String name, Train[] trains) {
-        this.name = name;
-        storage = new Car[1];
-        this.trains = trains;
-    }
-
     public void addTrain(Train c) {
         if (trains[0] == null) {
             trains[0] = c;
         } else {
             Train[] newArray = new Train[trains.length+1];
-            for (int i = 0; i < trains.length; i++) {
-                newArray[i] = trains[i];
-            }
+            System.arraycopy(trains, 0, newArray, 0, trains.length);
             newArray[trains.length] = c;
             trains = newArray;
         }
@@ -68,16 +53,13 @@ public class Station {
     public boolean addCar(Car c) {
         if (storage[0] == null) {
             storage[0] = c;
-            return true;
         } else {
             Car[] newArray = new Car[storage.length+1];
-            for (int i = 0; i < storage.length; i++) {
-                newArray[i] = storage[i];
-            }
+            System.arraycopy(storage, 0, newArray, 0, storage.length);
             newArray[storage.length] = c;
             storage = newArray;
-            return true;
         }
+        return true;
     }
 
     public Car removeCar() {
@@ -86,19 +68,9 @@ public class Station {
         }
         Car car = storage[storage.length-1];
         Car[] newArray = new Car[storage.length-1];
-        for (int i = 0; i < storage.length-1; i++) {
-            newArray[i] = storage[i];
-        }
+        System.arraycopy(storage, 0, newArray, 0, storage.length-1);
         storage = newArray;
         return car;
-    }
-
-    public Car[] getStorage() {
-        return storage;
-    }
-
-    public void setStorage(Car[] sorted) {
-        storage = sorted;
     }
 
     public Train[] getTrains() {

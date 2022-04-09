@@ -12,9 +12,7 @@ public class Train {
         this.cars = new Car[1];
     }
 
-    public Train() {
-
-    }
+    public Train() {}
 
     public boolean addCar(Car c) {
         if (cars == null) {
@@ -26,9 +24,7 @@ public class Train {
             return true;
         } else {
             Car[] newArray = new Car[cars.length+1];
-            for (int i = 0; i < cars.length; i++) {
-                newArray[i] = cars[i];
-            }
+            System.arraycopy(cars, 0, newArray, 0, cars.length);
             newArray[cars.length] = c;
             cars = newArray;
             return true;
@@ -41,9 +37,7 @@ public class Train {
         }
         Car car = cars[cars.length-1];
         Car[] newArray = new Car[cars.length-1];
-        for (int i = 0; i < cars.length-1; i++) {
-            newArray[i] = cars[i];
-        }
+        System.arraycopy(cars, 0, newArray, 0, cars.length-1);
         cars = newArray;
         return car;
     }

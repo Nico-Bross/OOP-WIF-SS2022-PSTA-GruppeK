@@ -12,13 +12,7 @@ public class Car {
         this.target = target;
     }
 
-    public Car() {
-
-    }
-
-    public int getCarID() {
-        return carID;
-    }
+    public Car() {}
 
     public Station getStart() {
         return start;

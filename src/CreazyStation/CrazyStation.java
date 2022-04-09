@@ -72,7 +72,7 @@ public class CrazyStation {
 
         // Cars get transported from Stations to CentralStation Frankfurt
         frankfurt.unloadTrains();
-        System.out.println("__________________Cars transported to the Central Station__________________");
+        System.out.println("_________________Cars transported to the Central Station_________________");
         System.out.println(frankfurt);
         frankfurt.distributeCars();
 
@@ -83,7 +83,7 @@ public class CrazyStation {
         cologne.unloadTrains();
 
         // Let's check if all possible cars are at the right station
-        System.out.println("__________________Transported Cars__________________");
+        System.out.println("____________________________Transported Cars____________________________");
         System.out.println(hamburg);
         System.out.println(berlin);
         System.out.println(munich);
