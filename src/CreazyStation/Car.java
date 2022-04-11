@@ -4,6 +4,7 @@ public class Car {
     private int carID;
     private Station start;
     private Station target;
+    private Car nextCar;
 
     public Car(int carID, Station start, Station target){
         this.carID = carID;
@@ -24,4 +25,11 @@ public class Car {
 
     public Station getTarget () { return target; }
 
+    public Car getNextCar() {
+        return nextCar;
+    }
+
+    public void setNextCar(Car nextCar) {
+        this.nextCar = nextCar;
+    }
 }

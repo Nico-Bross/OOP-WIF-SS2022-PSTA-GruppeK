@@ -4,6 +4,7 @@ public class Station {
     private Car[] storage;
     private Train[] trains;
     private String name;
+    private Train zuglok;
 
     public Station(String name){
         this.name = name;
