@@ -10,7 +10,7 @@ public class Reservation {
     public Reservation(Customer c,String time, String date,Employee waiter, Order[] orders){
         this.c = c;
         this.time = time;
-        this. = orders;
+        this.setOrders(orders);
         this.waiter = waiter;
         this.date = date;
     }

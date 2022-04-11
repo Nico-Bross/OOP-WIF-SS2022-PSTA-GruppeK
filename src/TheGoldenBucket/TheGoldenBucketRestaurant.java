@@ -4,7 +4,7 @@ public class TheGoldenBucketRestaurant {
     public static void main(String[] args) {
         Customer max = new Customer("Maxwell Powers");
 
-        Reservation maxReservation = new Reservation("Max", "8pm", "31.03.2022","", );
+        Reservation maxReservation = new Reservation("Max", "8pm", "31.03.2022","ttt", 5);
 
 
         Employee peter = new Employee("Peter Griffin","Waiter");
