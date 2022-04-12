@@ -1,29 +1,42 @@
 package CreazyStation;
+import java.util.*;
 
 public class CrazyStation {
     public static void main (String[] args){
-
         // Setup
         Station hamburg = new Station ("Hamburg");
         Station berlin = new Station ("Berlin");
         Station cologne = new Station ("Cologne");
         Station munich = new Station ("Munich");
+        LinkedList <Station> stations = new LinkedList <Station>();
+        stations.add(hamburg);
+        stations.add(berlin);
+        stations.add(cologne);
+        stations.add(munich);
 
-        CentralStation frankfurt = new CentralStation("Frankfurt");
-
+        LinkedList <Train> trains = new LinkedList<Train>();
+        LinkedList <Car> cars = new LinkedList <Car>();
+        CentralStation frankfurt = new CentralStation("Frankfurt", trains);
         Train munich_frankfurt = new Train(munich, frankfurt);
         Train hamburg_frankfurt = new Train(hamburg, frankfurt);
         Train berlin_frankfurt = new Train(berlin, frankfurt);
         Train cologne_frankfurt = new Train(cologne, frankfurt);
 
-        hamburg.addTrain(hamburg_frankfurt);
+        trains.add(munich_frankfurt);
+        trains.add(hamburg_frankfurt);
+        trains.add(berlin_frankfurt);
+        trains.add(cologne_frankfurt);
+
+
+
+       /* hamburg.addTrain(hamburg_frankfurt);
         munich.addTrain(munich_frankfurt);
         cologne.addTrain(cologne_frankfurt);
         berlin.addTrain(berlin_frankfurt);
         frankfurt.addTrain(hamburg_frankfurt);
         frankfurt.addTrain(munich_frankfurt);
         frankfurt.addTrain(cologne_frankfurt);
-        frankfurt.addTrain(berlin_frankfurt);
+        frankfurt.addTrain(berlin_frankfurt);*/
 
 
         Car c1 = new Car(1, hamburg, cologne);
@@ -40,6 +53,7 @@ public class CrazyStation {
         Car c12 = new Car(12, berlin, munich);
         Car c13 = new Car(13, berlin, hamburg);
         Car c14 = new Car(14, berlin, munich);
+        LinkedList <Car> cars = new LinkedList <Car>();
 
 
         hamburg.addCar(c1);
@@ -76,10 +90,10 @@ public class CrazyStation {
         frankfurt.distributeCars();
 
         // Trains drive with the new attached cars back to the stations
-        hamburg.unloadTrains();
+       /* hamburg.unloadTrains();
         berlin.unloadTrains();
         munich.unloadTrains();
-        cologne.unloadTrains();
+        cologne.unloadTrains();*/
 
         // Lets check if all possible cars are at the right station
 

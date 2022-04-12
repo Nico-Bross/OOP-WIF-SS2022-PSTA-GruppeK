@@ -1,45 +1,45 @@
 package CreazyStation;
 
-import java.util.Objects;
+import java.util.*;
+
 
 public class CentralStation{
-
-    private Car[] storage;
-    private Train[] trains;
+    private final LinkedList <Car> storage;
+    private final LinkedList <Train> trains;
     private final String name;
 
 
     public CentralStation(String name){
         this.name = name;
-        storage = new Car[1];
-        trains = new Train[1];
+        storage = new LinkedList <Car>();
+        trains = new LinkedList <Train>();
     }
 
     public CentralStation(String name, Train train){
         this.name = name;
-        storage = new Car[1];
-        trains = new Train[1];
-        trains [0] = train;
+        storage = new LinkedList<Car>();
+        trains = new LinkedList<Train>();
+        trains.set(0, train);
     }
 
-    public CentralStation(String name, Train[] trains){
+    public CentralStation(String name, LinkedList <Train> trains){
         this.name = name;
-        storage = new Car[1];
+        storage = new LinkedList <Car>();
         this.trains = trains;
     }
 
-    public void addTrain (Train c) {
-        if (trains[0] == null) {
-            trains[0] = c;
+    /*public void addTrain (Train c) {
+        if (trains.get(0) == null) {
+            trains.set(0, c);
         } else {
-            Train[] newArray = new Train[trains.length + 1];
+            Train[] newArray = new Train[trains.size() + 1];
             System.arraycopy(trains, 0, newArray, 0, trains.length);
             newArray[trains.length] = c;
             trains = newArray;
         }
-    }
+    }*/
 
-    public boolean addCar (Car c){
+   /* public boolean addCar (Car c){
         if (storage[0] == null){
             storage [0] = c;
             return true;
@@ -50,9 +50,9 @@ public class CentralStation{
             storage = newArray;
             return true;
         }
-    }
+    }*/
 
-    public Car removeCar (){
+   /* public Car removeCar (){
         if (storage.length == 0){
             return null;
         }
@@ -61,10 +61,10 @@ public class CentralStation{
         System.arraycopy(storage, 0, newArray, 0, storage.length - 1);
         storage = newArray;
         return car;
-    }
+    }*/
 
-    public void loadTrains (){
-        Car c = removeCar();
+    /*public void loadTrains (){
+        Car c = storage.pollFirst();
         while (c != null){
             for (Train t: trains) {
                 while (c != null) {
@@ -104,13 +104,13 @@ public class CentralStation{
 
     public void setStorage (Car[] sorted){
         storage = sorted;
-    }
+    }*/
 
-    public Train[] getTrains ()  { return trains; }
+    public LinkedList<Train> getTrains ()  { return trains; }
 
     public String getName() { return name; }
 
-    public void distributeCars (){
+   /* public void distributeCars (){
         Car[] notDistributable = new Car[1];
         while (storage.length != 0){
             Car c = removeCar();
@@ -131,6 +131,6 @@ public class CentralStation{
                 }
             }
         }
-        storage = new Car[1];
-    }
+        storage = new LinkedList<Car>();
+    }*/
 }

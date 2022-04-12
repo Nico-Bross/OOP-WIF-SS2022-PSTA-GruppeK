@@ -18,9 +18,9 @@ public class Car {
                 "\tTarget: " + target.getName();
     }
 
-    //public int getCarID (){ return carID; }
+  public int getCarID (){ return carID; }
 
-    // public Station getStart () { return start; }
+    public Station getStart () { return start; }
 
     public Station getTarget () { return target; }
 
