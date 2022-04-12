@@ -58,7 +58,7 @@ public class Station {
         if (storage == null){
             return null;
         }
-        while (storage.getNextCar().getNextCar() != null){
+        while (storage.getNextCar() != null){
             storage = storage.getNextCar();
         }
         car = storage.getNextCar();

@@ -4,24 +4,24 @@ public class CentralStation{
 
     public CentralStation(String name){
         this.name = name;
-        storage = new Car[1];
+    //    storage = new Car[1];
         trains = new Train[1];
     }
 
     public CentralStation(String name, Train train){
         this.name = name;
-        storage = new Car[1];
+      //  storage = new Car[1];
         trains = new Train[1];
         trains [1] = train;
     }
 
     public CentralStation(String name, Train[] trains){
         this.name = name;
-        storage = new Car[1];
+     //   storage = new Car[1];
         this.trains = trains;
     }
 
-    private Car[] storage;
+    private Car storage;
     private Train[] trains;
     private String name;
 
@@ -39,30 +39,32 @@ public class CentralStation{
     }
 
     public boolean addCar (Car c){
-        if (storage[0] == null){
-            storage [0] = c;
+        Car temp = storage;              //Kopf abspeichern, nicht der er verloren geht
+        if (storage == null){
+            storage  = c;
             return true;
         } else {
-            Car[] newArray = new Car[storage.length+1];
-            for (int i = 0; i < storage.length; i++ ){
-                newArray[i] = storage[i];
+            while (storage.getNextCar() != null){
+                storage = storage.getNextCar();
             }
-            newArray [storage.length] = c;
-            storage = newArray;
+            storage.setNextCar(c);
+            storage = temp;
             return true;
         }
     }
 
     public Car removeCar (){
-        if (storage.length == 0){
+        Car temp = storage;
+        Car car;
+        if (storage == null){
             return null;
         }
-        Car car = storage[storage.length-1];
-        Car[] newArray = new Car[storage.length-1];
-        for (int i = 0; i < storage.length-1; i++ ){
-            newArray[i] = storage[i];
+        while (storage.getNextCar().getNextCar() != null){
+            storage = storage.getNextCar();
         }
-        storage = newArray;
+        car = storage.getNextCar();
+        storage.setNextCar(null);
+        storage = temp;
         return car;
     }
 
@@ -80,7 +82,7 @@ public class CentralStation{
             }
             c = removeCar();
         }
-        storage = new Car[1];
+        storage = null;
     }
 
     public void unloadTrains () {
@@ -95,24 +97,27 @@ public class CentralStation{
     }
 
     public String toString () {
+        Car temp = storage;
         String s;
         s = name + ":\n";
-        for (Car c: storage){
-            s += c.toString() + "\n";
+        while (storage != null) {
+            s += storage.toString() + "\n";
+            storage = storage.getNextCar();
         }
+        storage = temp;
         return s;
     }
 
-    public Car[] getStorage (){return storage; }
+    public Car getStorage (){return storage; }
 
-    public void setStorage (Car[] sorted){
+    public void setStorage (Car sorted){
         storage = sorted;
     }
 
     public Train[] getTrains ()  { return trains; }
 
     public String getName() { return name; }
-
+/*      //Wird später realisiert //LM
     public void distributeCars (){
         Car[] notDistributable = new Car[1];
         while (storage.length != 0){
@@ -140,4 +145,6 @@ public class CentralStation{
         }
         storage = new Car[1];
     }
+
+ */
 }
