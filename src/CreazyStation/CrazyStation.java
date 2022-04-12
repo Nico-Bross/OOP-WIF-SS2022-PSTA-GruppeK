@@ -12,19 +12,20 @@ public class CrazyStation {
 
         CentralStation frankfurt = new CentralStation("Frankfurt");
 
-        Train[] zug =new Train[]{,
-        new Train(berlin, frankfurt),
+        Train[] zug =new Train[]{
         new Train(hamburg, frankfurt),
-        new Train(cologne, frankfurt)};
+        new Train(munich, frankfurt),
+        new Train(cologne, frankfurt),
+        new Train(berlin, frankfurt),
+        };
 
-        hamburg.addTrain(zug[]);
-        munich.addTrain(zug[;
-        cologne.addTrain(cologne_frankfurt);
-        berlin.addTrain(berlin_frankfurt);
-        frankfurt.addTrain(hamburg_frankfurt);
-        frankfurt.addTrain(munich_frankfurt);
-        frankfurt.addTrain(cologne_frankfurt);
-        frankfurt.addTrain(berlin_frankfurt);
+        hamburg.addTrain(zug[0]);
+        munich.addTrain(zug[1]);
+        cologne.addTrain(zug[2]);
+        berlin.addTrain(zug[3]);
+        for(Train t:zug)
+        frankfurt.addTrain(t);
+
 
 
         Car[] cars =new Car[]{new Car(1, hamburg, cologne),
