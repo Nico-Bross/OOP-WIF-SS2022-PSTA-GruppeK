@@ -27,42 +27,23 @@ public class Station {
     }
 
 
-   /* public void addTrain (Train c) {
-        if (trains[0] == null) {
-            trains[0] = c;
-        } else {
-            Train[] newArray = new Train[trains.length + 1];
-            System.arraycopy(trains, 0, newArray, 0, trains.length);
-            newArray[trains.length] = c;
-            trains = newArray;
-        }
-    }*/
+    public void addTrain (Train c) {
+        trains.add(c);
+    }
 
-    /*public boolean addCar (Car c){
-        if (storage[0] == null){
-            storage [0] = c;
-            return true;
-        } else {
-            Car[] newArray = new Car[storage.length+1];
-            System.arraycopy(storage, 0, newArray, 0, storage.length);
-            newArray [storage.length] = c;
-            storage = newArray;
-            return true;
-        }
-    }*/
+    public boolean addCar (Car c){
+        return storage.add(c);
+    }
 
-   /* public Car removeCar (){
-        if (storage.length == 0){
+   public Car removeCar (){
+        if(storage.size()<1)
             return null;
-        }
-        Car car = storage[storage.length-1];
-        Car[] newArray = new Car[storage.length-1];
-        System.arraycopy(storage, 0, newArray, 0, storage.length - 1);
-        storage = newArray;
+        Car car = storage.getLast();
+        storage.remove(car);
         return car;
-    }*/
+    }
 
-  /*public void loadTrains (){
+  public void loadTrains (){
         Car c = removeCar();
         while (c != null){
             for (Train t: trains) {
@@ -76,10 +57,10 @@ public class Station {
             }
             c = removeCar();
         }
-        storage = new Car[1];
-    }*/
+        storage = new LinkedList<Car>();
+    }
 
-  /* public void unloadTrains () {
+   public void unloadTrains () {
 
         for (Train t: trains){
             Car c = t.removeCar();
@@ -88,9 +69,9 @@ public class Station {
                 c = t.removeCar();
             }
         }
-    }*/
+    }
 
-    /* public String toString () {
+    public String toString () {
          StringBuilder s;
          s = new StringBuilder(name + ":\n");
          for (Car c: storage){
@@ -98,7 +79,7 @@ public class Station {
          }
          return s.toString();
      }
-
+    /*
      public Car[] getStorage (){return storage; }
 
      public void setStorage (Car[] sorted){
@@ -123,5 +104,6 @@ public class Station {
         public LinkedList<Train> getTrains () { return trains; }
 
         public String getName () { return name; }
+
 }
 

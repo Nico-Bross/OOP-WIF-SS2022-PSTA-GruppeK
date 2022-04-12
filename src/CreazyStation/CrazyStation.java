@@ -29,14 +29,14 @@ public class CrazyStation {
 
 
 
-       /* hamburg.addTrain(hamburg_frankfurt);
+        hamburg.addTrain(hamburg_frankfurt);
         munich.addTrain(munich_frankfurt);
         cologne.addTrain(cologne_frankfurt);
         berlin.addTrain(berlin_frankfurt);
         frankfurt.addTrain(hamburg_frankfurt);
         frankfurt.addTrain(munich_frankfurt);
         frankfurt.addTrain(cologne_frankfurt);
-        frankfurt.addTrain(berlin_frankfurt);*/
+        frankfurt.addTrain(berlin_frankfurt);
 
 
         Car c1 = new Car(1, hamburg, cologne);
@@ -53,8 +53,7 @@ public class CrazyStation {
         Car c12 = new Car(12, berlin, munich);
         Car c13 = new Car(13, berlin, hamburg);
         Car c14 = new Car(14, berlin, munich);
-        LinkedList <Car> cars = new LinkedList <Car>();
-
+        /** M.Gohn: Removed redundant LinkedLists cars declaration **/
 
         hamburg.addCar(c1);
         hamburg.addCar(c2);
@@ -90,10 +89,10 @@ public class CrazyStation {
         frankfurt.distributeCars();
 
         // Trains drive with the new attached cars back to the stations
-       /* hamburg.unloadTrains();
+       hamburg.unloadTrains();
         berlin.unloadTrains();
         munich.unloadTrains();
-        cologne.unloadTrains();*/
+        cologne.unloadTrains();
 
         // Lets check if all possible cars are at the right station
 
