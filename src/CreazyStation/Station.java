@@ -2,78 +2,78 @@ package CreazyStation;
 
 public class Station {
 
-    protected Car[] storage;
-    protected Train[] trains;
+    protected Element<Car> storage;
+    protected Element<Train> trains;
     protected String name;
 
     public Station(String name) {
         this.name = name;
-        storage = new Car[1];
-        trains = new Train[1];
+        this.storage = null;
+        this.trains = null;
     }
 
     public void addTrain(Train c) {
-        if (trains[0] == null) {
-            trains[0] = c;
+        if (trains == null) {
+            trains = new Element<>(c,null);
         } else {
-            Train[] newArray = new Train[trains.length+1];
-            System.arraycopy(trains, 0, newArray, 0, trains.length);
-            newArray[trains.length] = c;
-            trains = newArray;
+            trains = new Element<>(c, trains);
         }
     }
 
     public void loadTrains() {
         Car c = removeCar();
         while (c != null) {
-            for (Train t: trains) {
+            Element<Train> el = trains;
+            while (el != null) {
                 while (c != null) {
-                    if (t.addCar(c)) {
+                    if (el.value.addCar(c)) {
                         c = removeCar();
                     } else {
                         break;
                     }
                 }
+                el = el.next;
             }
             c = removeCar();
         }
-        storage = new Car[1];
+        storage = null;
     }
 
     public void unloadTrains() {
-        for (Train t: trains) {
-            Car c = t.removeCar();
+        Element<Train> el = trains;
+        while (el != null) {
+            Car c = el.value.removeCar();
             while (c != null) {
                 addCar(c);
-                c = t.removeCar();
+                c = el.value.removeCar();
             }
+            el = el.next;
         }
     }
 
     public boolean addCar(Car c) {
-        if (storage[0] == null) {
-            storage[0] = c;
+        if (storage == null) {
+            storage = new Element<>(c,null);
         } else {
-            Car[] newArray = new Car[storage.length+1];
-            System.arraycopy(storage, 0, newArray, 0, storage.length);
-            newArray[storage.length] = c;
-            storage = newArray;
+            Element<Car> el = storage;
+            while (el.next != null) {
+                el = el.next;
+            }
+            el.next = new Element<>(c,null);
         }
         return true;
     }
 
     public Car removeCar() {
-        if (storage.length == 0) {
+        if (storage == null) {
             return null;
         }
-        Car car = storage[storage.length-1];
-        Car[] newArray = new Car[storage.length-1];
-        System.arraycopy(storage, 0, newArray, 0, storage.length-1);
-        storage = newArray;
-        return car;
+        Car c = storage.value;
+        storage = storage.next;
+        return c;
     }
 
-    public Train[] getTrains() {
+    public Element<Train> getTrains() {
         return trains;
     }
 
@@ -85,8 +85,10 @@ public class Station {
     public String toString() {
         String s;
         s = name + ":\n";
-        for (Car c: storage) {
-            s += c.toString() + "\n";
+        Element<Car> el = storage;
+        while (el != null) {
+            s += el.value.toString() + "\n";
+            el = el.next;
         }
         return s;
     }

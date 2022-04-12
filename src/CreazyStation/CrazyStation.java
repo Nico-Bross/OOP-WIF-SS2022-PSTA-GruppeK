@@ -12,23 +12,22 @@ public class CrazyStation {
 
         CentralStation frankfurt = new CentralStation("Frankfurt");
 
-        Train[] zug =new Train[]{
+        Train[] trains = new Train[]{
         new Train(hamburg, frankfurt),
         new Train(munich, frankfurt),
         new Train(cologne, frankfurt),
-        new Train(berlin, frankfurt),
-        };
+        new Train(berlin, frankfurt)};
 
-        hamburg.addTrain(zug[0]);
-        munich.addTrain(zug[1]);
-        cologne.addTrain(zug[2]);
-        berlin.addTrain(zug[3]);
-        for(Train t:zug)
-        frankfurt.addTrain(t);
-
+        hamburg.addTrain(trains[0]);
+        munich.addTrain(trains[1]);
+        cologne.addTrain(trains[2]);
+        berlin.addTrain(trains[3]);
+        for(Train t:trains)
+            frankfurt.addTrain(t);
 
 
-        Car[] cars =new Car[]{new Car(1, hamburg, cologne),
+        Car[] cars = new Car[]{
+        new Car(1, hamburg, cologne),
         new Car(2, hamburg, cologne),
         new Car(3, hamburg, munich),
         new Car(4, hamburg, munich),
@@ -44,15 +43,15 @@ public class CrazyStation {
         new Car(14, berlin, munich)};
 
 
-       for (Car c:cars)
-       {if (c.getStart()==hamburg)
-            hamburg.addCar(c);
-          else if (c.getStart()==munich)
-        munich.addCar(c);
-          else if (c.getStart()==berlin)
-        berlin.addCar(c);
-          else if (c.getStart()==cologne)
-        cologne.addCar(c);
+       for (Car c:cars) {
+           if (c.getStart()==hamburg)
+               hamburg.addCar(c);
+           else if (c.getStart()==munich)
+               munich.addCar(c);
+           else if (c.getStart()==berlin)
+               berlin.addCar(c);
+           else if (c.getStart()==cologne)
+               cologne.addCar(c);
        }
 
         System.out.println("__________________Situation at the beginning of the day__________________");

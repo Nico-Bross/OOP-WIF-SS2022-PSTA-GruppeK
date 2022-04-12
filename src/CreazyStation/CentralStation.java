@@ -1,5 +1,7 @@
 package CreazyStation;
 
+import java.util.Objects;
+
 public class CentralStation extends Station {
 
     public CentralStation(String name) {
@@ -7,28 +9,27 @@ public class CentralStation extends Station {
     }
 
     public void distributeCars() {
-        Car[] notDistributable = new Car[1];
-        while (storage.length != 0) {
+        Element<Car> notDistributable = null;
+        while (storage != null) {
             Car c = removeCar();
-            for (Train t: getTrains()) {
-                if (t.getStation().getName() == c.getTarget().getName()) {
-                    if (t.addCar(c)) {
+            Element<Train> el = getTrains();
+            while (el != null) {
+                if (Objects.equals(el.value.getStation().getName(), c.getTarget().getName())) {
+                    if (el.value.addCar(c)) {
                         break;
                     } else {
                         if (c != null) {
-                            if (notDistributable[0] == null) {
-                                notDistributable[0] = c;
+                            if (notDistributable == null) {
+                                notDistributable = new Element<>(c,null);
                             } else {
-                                Car[] newArray = new Car[notDistributable.length+1];
-                                System.arraycopy(notDistributable, 0, newArray, 0, notDistributable.length);
-                                newArray[notDistributable.length] = c;
-                                notDistributable = newArray;
+                                notDistributable = new Element<>(c,notDistributable);
                             }
                         }
                     }
                 }
+                el = el.next;
             }
         }
-        storage = new Car[1];
+        storage = null;
     }
 }
