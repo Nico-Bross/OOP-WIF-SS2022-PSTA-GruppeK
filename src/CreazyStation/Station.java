@@ -61,7 +61,7 @@ public class Station {
         while (storage.getNextCar() != null){
             storage = storage.getNextCar();
         }
-        car = storage.getNextCar();
+        car = storage;                  //oder storage.getNextCar //LM
         storage.setNextCar(null);
         storage = temp;
         return car;

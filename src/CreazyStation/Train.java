@@ -4,14 +4,14 @@ package CreazyStation;
 public class Train {
     private Station station;
     private CentralStation central;
-    private Car[] cars;
+    private Car cars;
 
     public Train(){};
 
     public Train(Station station, CentralStation central){
         this.central = central;
         this.station = station;
-        this.cars = new Car[1];
+      //  this.cars = new Car[1];
     }
 
     public Station getStation (){
@@ -23,34 +23,32 @@ public class Train {
     }
 
     public boolean addCar (Car c){
+        Car temp = cars;              //Kopf abspeichern, nicht der er verloren geht
         if (cars == null){
-            cars = new Car[1];
-            cars [0] = c;
-            return true;
-        } else if (cars.length == 1 && cars[0] == null){
-            cars [0] = c;
+            cars  = c;
             return true;
         } else {
-            Car[] newArray = new Car[cars.length+1];
-            for (int i = 0; i < cars.length; i++ ){
-                newArray[i] = cars[i];
+            while (cars.getNextCar() != null){
+                cars = cars.getNextCar();
             }
-            newArray [cars.length] = c;
-            cars = newArray;
+            cars.setNextCar(c);
+            cars = temp;
             return true;
         }
     }
 
     public Car removeCar (){
-        if (cars.length == 0){
+        Car temp = cars;
+        Car car;
+        if (cars == null){
             return null;
         }
-        Car car = cars[cars.length-1];
-        Car[] newArray = new Car[cars.length-1];
-        for (int i = 0; i < cars.length-1; i++ ){
-            newArray[i] = cars[i];
+        while (cars.getNextCar() != null){
+            cars = cars.getNextCar();
         }
-        cars = newArray;
+        car = cars.getNextCar();
+        car.setNextCar(null);
+        cars = temp;
         return car;
     }
 }

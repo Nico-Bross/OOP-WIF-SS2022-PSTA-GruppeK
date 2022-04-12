@@ -65,16 +65,17 @@ public class CrazyStation {
 
         // Alles was noch nicht umgebaut wurde auskommentiert
 
-        // Cars get attached to the available trains on those routes
+        // Cars get attached to the available trains on those routes        //Endlos schleife !!! im loadTrains
         hamburg.loadTrains();
         cologne.loadTrains();
         munich.loadTrains();
         berlin.loadTrains();
-/*
+
         // Cars get transported from Stations to CentralStation Frankfurt
         frankfurt.unloadTrains();
         System.out.println("__________________Cars transported to the Central Station__________________");
         System.out.println(frankfurt.toString());
+        /*
         frankfurt.distributeCars();
 
         // Trains drive with the new attached cars back to the stations
