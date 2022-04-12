@@ -62,6 +62,8 @@ public class CrazyStation {
         System.out.println(berlin.toString());
         System.out.println(munich.toString());
         System.out.println(cologne.toString());
+/*
+        // Alles was noch nicht umgebaut wurde auskommentiert
 
         // Cars get attached to the available trains on those routes
         hamburg.loadTrains();
@@ -88,6 +90,8 @@ public class CrazyStation {
         System.out.println(berlin.toString());
         System.out.println(munich.toString());
         System.out.println(cologne.toString());
+
+ */
 
     }
 }

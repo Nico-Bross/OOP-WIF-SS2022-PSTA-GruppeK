@@ -29,6 +29,10 @@ public class Car {
         return nextCar;
     }
 
+    public void setNextCar(Car nextCar) {
+        this.nextCar = nextCar;
+    }
+
     public void setCarID(int carID) {
         this.carID = carID;
     }
