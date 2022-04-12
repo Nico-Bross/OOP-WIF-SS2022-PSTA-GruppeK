@@ -21,7 +21,7 @@ public class CentralStation{
         this.trains = trains;
     }
 
-    private Car[] storage;
+    private Car storage;
     private Train[] trains;
     private String name;
 
@@ -83,7 +83,12 @@ public class CentralStation{
         storage = new Car[1];
     }
 
-    public void unloadTrains () {
+    public void unloadTrains (){
+        if (storage.getNextCar() == null){
+            storage =
+        }
+    }
+    /*{
 
         for (Train t: trains){
             Car c = t.removeCar();
@@ -92,7 +97,7 @@ public class CentralStation{
                 c = t.removeCar();
             }
         }
-    }
+    }*/
 
     public String toString () {
         String s;

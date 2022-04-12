@@ -1,27 +1,27 @@
 package CreazyStation;
 
 public class Station {
-    private Car[] storage;
+    private Car storage;
     private Train[] trains;
     private String name;
     private Train zuglok;
 
     public Station(String name){
         this.name = name;
-        storage = new Car[1];
+        storage = null;
         trains = new Train[1];
     }
 
     public Station(String name, Train train){
         this.name = name;
-        storage = new Car[1];
+        storage = null;
         trains = new Train[1];
         trains [1] = train;
     }
 
     public Station(String name, Train[] trains){
         this.name = name;
-        storage = new Car[1];
+        storage = null;
         this.trains = trains;
     }
 
@@ -39,6 +39,23 @@ public class Station {
     }
 
     public boolean addCar (Car c){
+        if (storage == null){
+            storage = c;
+            return true;
+        }
+        while (storage != null){
+            Car it = storage;
+            if (it.getNextCar() != null){
+                it = it.getNextCar();
+            }
+            else {
+                it.setNextCar(c);
+                return true;
+            }
+        }
+        return false;
+    }
+    /*{
         if (storage[0] == null){
             storage [0] = c;
             return true;
@@ -50,8 +67,8 @@ public class Station {
             newArray [storage.length] = c;
             storage = newArray;
             return true;
-        }
-    }
+        {
+    }*/
 
     public Car removeCar (){
         if (storage.length == 0){
@@ -67,6 +84,9 @@ public class Station {
     }
 
     public void loadTrains (){
+        zuglok.setNextCar(storage);
+    }
+    /*{
         Car c = removeCar();
         while (c != null){
             for (Train t: trains) {
@@ -81,7 +101,7 @@ public class Station {
             c = removeCar();
         }
         storage = new Car[1];
-    }
+    }*/
 
     public void unloadTrains () {
 

@@ -10,6 +10,7 @@ public class Car {
         this.carID = carID;
         this.start = start;
         this.target = target;
+        this.nextCar = null;
     }
 
     public Car(){};

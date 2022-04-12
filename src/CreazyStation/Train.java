@@ -19,6 +19,10 @@ public class Train {
         return station;
     }
 
+    public void setNextCar(Car nextCar) {
+        this.nextCar = nextCar;
+    }
+
     public CentralStation getCentral () {
         return central;
     }
