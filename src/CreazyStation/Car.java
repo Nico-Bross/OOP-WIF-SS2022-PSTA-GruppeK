@@ -4,6 +4,7 @@ public class Car {
     private int carID;
     private Station start;
     private Station target;
+    private Car nextCar;
 
     public Car(int carID, Station start, Station target){
         this.carID = carID;
@@ -11,7 +12,7 @@ public class Car {
         this.target = target;
     }
 
-    public Car(){};
+  //  public Car(){};
 
     public String toString (){
         return "CarID: " + carID + "\tStart: " + start.getName() +
@@ -24,4 +25,11 @@ public class Car {
 
     public Station getTarget () { return target; }
 
+    public Car getNextCar() {
+        return nextCar;
+    }
+
+    public void setCarID(int carID) {
+        this.carID = carID;
+    }
 }
