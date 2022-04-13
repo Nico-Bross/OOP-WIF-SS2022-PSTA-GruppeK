@@ -1,6 +1,6 @@
 package CreazyStation;
 
-public class Car {
+public class Car implements LinkedListCars{
     private int carID;
     private Station start;
     private Station target;
@@ -9,9 +9,13 @@ public class Car {
         this.carID = carID;
         this.start = start;
         this.target = target;
-    }
 
-    public Car(){};
+    }
+    private int [] zs;
+
+    public Car(){
+        zs = new int[]{};
+    }
 
     public String toString (){
         return "CarID: " + carID + "\tStart: " + start.getName() +
@@ -24,4 +28,23 @@ public class Car {
 
     public Station getTarget () { return target; }
 
+    @Override
+    public int get(int i) {
+        return zs[i];
+    }
+
+    @Override
+    public void put(int i, int v) {
+        zs[i]=carID;
+
+    }
+
+    @Override
+    public boolean addCar(Car c) {
+        int[] neu = new int[zs.length+1];
+        System.arraycopy(zs,0,neu,0, zs.length);
+        neu[zs.length] = carID;
+        zs = neu;
+
+    }
 }

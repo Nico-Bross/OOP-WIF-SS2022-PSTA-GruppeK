@@ -1,12 +1,11 @@
 package CreazyStation;
 
 
-public class Train {
+public class Train implements LinkedListCars{
     private Station station;
     private CentralStation central;
     private Car[] cars;
 
-    public Train(){};
 
     public Train(Station station, CentralStation central){
         this.central = central;
@@ -22,7 +21,14 @@ public class Train {
         return central;
     }
 
-    public boolean addCar (Car c){
+    public Train(){
+
+    }
+
+
+
+
+    /* OLD   public boolean addCar (Car c){
         if (cars == null){
             cars = new Car[1];
             cars [0] = c;
@@ -39,7 +45,9 @@ public class Train {
             cars = newArray;
             return true;
         }
-    }
+    }*/
+
+
 
     public Car removeCar (){
         if (cars.length == 0){
