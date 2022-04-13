@@ -5,6 +5,7 @@ public class Train {
     private Station station;
     private CentralStation central;
     private Car[] cars;
+    private Car nextCar;
 
     public Train(){};
 
@@ -12,10 +13,14 @@ public class Train {
         this.central = central;
         this.station = station;
         this.cars = new Car[1];
-    }
+        this.nextCar = null;    }
 
     public Station getStation (){
         return station;
+    }
+
+    public void setNextCar(Car nextCar) {
+        this.nextCar = nextCar;
     }
 
     public CentralStation getCentral () {
@@ -23,26 +28,45 @@ public class Train {
     }
 
     public boolean addCar (Car c){
-        if (cars == null){
-            cars = new Car[1];
-            cars [0] = c;
-            return true;
-        } else if (cars.length == 1 && cars[0] == null){
-            cars [0] = c;
-            return true;
-        } else {
-            Car[] newArray = new Car[cars.length+1];
-            for (int i = 0; i < cars.length; i++ ){
-                newArray[i] = cars[i];
-            }
-            newArray [cars.length] = c;
-            cars = newArray;
+        if (nextCar == null){
+            nextCar = c;
             return true;
         }
+        Car it = nextCar;
+        while (it != null){
+            if (it.getNextCar() == null){
+                it.setNextCar(c);
+                return true;
+            }
+            else{
+                it = it.getNextCar();
+            }
+        }
+        return false;
     }
 
     public Car removeCar (){
-        if (cars.length == 0){
+        if (nextCar == null){
+            return null;
+        }
+        if (nextCar != null){
+            Car it = nextCar;
+            Car perviousCar = null;
+            while(it != null){
+                if (it.getNextCar() != null){
+                    perviousCar = it;
+                    it.setNextCar(it.getNextCar());
+                }
+                else {
+                    perviousCar.setNextCar(null);
+                    return it;
+                }
+
+            }
+        }
+        return null;
+    }
+        /*if (cars.length == 0){
             return null;
         }
         Car car = cars[cars.length-1];
@@ -52,5 +76,5 @@ public class Train {
         }
         cars = newArray;
         return car;
-    }
+    }*/
 }
