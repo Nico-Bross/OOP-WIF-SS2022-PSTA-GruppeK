@@ -1,6 +1,10 @@
 package CreazyStation;
 
-public class CentralStation{
+public class CentralStation implements TrainMethoden{
+
+    private Car[] storage;
+    private Train[] trains;
+    private String name;
 
     public CentralStation(String name){
         this.name = name;
@@ -21,10 +25,8 @@ public class CentralStation{
         this.trains = trains;
     }
 
-    private Car storage;
-    private Train[] trains;
-    private String name;
 
+    @Override
     public void addTrain (Train c) {
         if (trains[0] == null) {
             trains[0] = c;
@@ -38,6 +40,7 @@ public class CentralStation{
         }
     }
 
+    @Override
     public boolean addCar (Car c){
         if (storage[0] == null){
             storage [0] = c;
@@ -53,6 +56,7 @@ public class CentralStation{
         }
     }
 
+    @Override
     public Car removeCar (){
         if (storage.length == 0){
             return null;

@@ -1,6 +1,6 @@
 package CreazyStation;
 
-public class Station {
+public class Station implements TrainMethoden {
     private Car storage;
     private Train[] trains;
     private String name;
@@ -25,6 +25,7 @@ public class Station {
         this.trains = trains;
     }
 
+    @Override
     public void addTrain (Train c) {
         if (trains[0] == null) {
             trains[0] = c;
@@ -70,6 +71,7 @@ public class Station {
         {
     }*/
 
+    @Override
     public Car removeCar (){
         if (storage.length == 0){
             return null;

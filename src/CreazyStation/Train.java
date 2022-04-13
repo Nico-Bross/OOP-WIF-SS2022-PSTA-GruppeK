@@ -1,7 +1,7 @@
 package CreazyStation;
 
 
-public class Train {
+public class Train implements TrainMethoden{
     private Station station;
     private CentralStation central;
     private Car[] cars;
@@ -26,6 +26,7 @@ public class Train {
         return central;
     }
 
+    @Override
     public boolean addCar (Car c){
         if (nextCar == null){
             nextCar = c;
@@ -44,6 +45,7 @@ public class Train {
         return false;
     }
 
+    @Override
     public Car removeCar (){
         if (nextCar == null){
             return null;
