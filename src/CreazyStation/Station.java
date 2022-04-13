@@ -62,7 +62,7 @@ public class Station {
             storage = storage.getNextCar();
         }
         car = storage;                  //oder storage.getNextCar //LM
-        storage.setNextCar(null);
+        storage = null;
         storage = temp;
         return car;
     }

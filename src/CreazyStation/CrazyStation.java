@@ -70,7 +70,7 @@ public class CrazyStation {
         cologne.loadTrains();
         munich.loadTrains();
         berlin.loadTrains();
-
+/*
         // Cars get transported from Stations to CentralStation Frankfurt
         frankfurt.unloadTrains();
         System.out.println("__________________Cars transported to the Central Station__________________");
@@ -91,8 +91,7 @@ public class CrazyStation {
         System.out.println(berlin.toString());
         System.out.println(munich.toString());
         System.out.println(cologne.toString());
-
- */
+*/
 
     }
 }
