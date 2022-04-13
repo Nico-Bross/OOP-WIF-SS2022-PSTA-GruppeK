@@ -7,7 +7,6 @@ public class Train {
     private Car[] cars;
     private Car nextCar;
 
-    public Train(){};
 
     public Train(Station station, CentralStation central){
         this.central = central;
