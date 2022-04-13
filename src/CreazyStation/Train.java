@@ -1,12 +1,14 @@
 package CreazyStation;
 
 
+import java.util.LinkedList;
+
 public class Train {
     private Station station;
     private CentralStation central;
     private Car[] cars;
 
-    public Train(){};
+    // public Train(){}; Default Konstruktor nicht Effizient ?
 
     public Train(Station station, CentralStation central){
         this.central = central;
@@ -53,4 +55,6 @@ public class Train {
         cars = newArray;
         return car;
     }
+
+
 }
