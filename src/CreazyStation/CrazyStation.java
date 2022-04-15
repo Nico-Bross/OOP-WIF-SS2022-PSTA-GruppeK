@@ -11,10 +11,12 @@ public class CrazyStation {
 
         CentralStation frankfurt = new CentralStation("Frankfurt");
 
+
         Train munich_frankfurt = new Train(munich, frankfurt);
         Train hamburg_frankfurt = new Train(hamburg, frankfurt);
         Train berlin_frankfurt = new Train(berlin, frankfurt);
         Train cologne_frankfurt = new Train(cologne, frankfurt);
+
 
         hamburg.addTrain(hamburg_frankfurt);
         munich.addTrain(munich_frankfurt);
@@ -24,6 +26,8 @@ public class CrazyStation {
         frankfurt.addTrain(munich_frankfurt);
         frankfurt.addTrain(cologne_frankfurt);
         frankfurt.addTrain(berlin_frankfurt);
+
+
 
 
         Car c1 = new Car(1, hamburg, cologne);
@@ -40,6 +44,15 @@ public class CrazyStation {
         Car c12 = new Car(12, berlin, munich);
         Car c13 = new Car(13, berlin, hamburg);
         Car c14 = new Car(14, berlin, munich);
+
+
+        LinkedListTrain test = new LinkedListTrain(munich, frankfurt);
+
+        test.addCar(c1);
+        test.addCar(c2);
+
+        System.out.println(test.head.next.data.getCarID());
+
 
 
         hamburg.addCar(c1);

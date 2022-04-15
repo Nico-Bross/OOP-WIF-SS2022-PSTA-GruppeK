@@ -1,71 +1,51 @@
 package CreazyStation;
 
-import java.util.*; //Fragen ob diese Variante effizient ist oder ob man java.util.Arrays hernehmen soll
+public class LinkedListTrain{
 
-public class LinkedListTrain implements TrainLinkedList{
+    class Node {
 
-    private Station station;
-    private CentralStation central;
-    private Car[] cars;
+        Car data;
+        Node next;
+
+        Node(Car data)   { this.data = data; }
+    }
+
+    Node head;
+    Station station;
+    CentralStation central;
 
     public LinkedListTrain(Station station, CentralStation central){
-        this.central = central;
         this.station = station;
-        this.cars = new Car[1];
+        this.central = central;
     }
 
-    public CentralStation getCentral () {
-        return central;
-    }
+    public void add(Car v) {
+        Node neuesElement = new Node();
+        neuesElement.data=v;
+        neuesElement.next=null;
 
-
-    public Station getStation (){
-        return station;
-    }
-
-    private int[] zug;
-
-    public LinkedListTrain(){
-        zug = new int[10];
-    }
-
-    @Override
-    public int get(int i) {
-
-        return zug[i];
-    }
-
-    @Override
-    public void put(int i, int v) {
-        zug[i] = v;
-    }
-
-    @Override
-    public void add(int v) {
-        int[] neuZug = new int [zug.length + 1];
-        System.arraycopy(zug,0,neuZug,0,zug.length);
-        neuZug[zug.length] = v;
-        zug = neuZug;
-    }
-
-    @Override
-    public int remove(int i) {
-        int s = zug[i];
-        int[] neuerZug = new int [zug.length - 1];
-        for(int j = 0 , k = 0 ; j < zug.length; j++){
-            neuerZug[k++] = zug[j];
+        /*
+        if(head == null){
+            head = neuesElement;
+            return;
         }
-        zug = neuerZug;
-        return s;
+        */
+        neuesElement.next=head;
+        head = neuesElement;
+        /*
+        Element it = head;
+        while(it.next!=null){
+            it=it.next;
+        }
+        it.next= neuesElement;
+        */
     }
 
-    @Override
-    public int length() {
-        return zug.length;
-    }
 
-    @Override
-    public String toString() {
-        return Arrays.toString(zug);
-    }
+
+    public CentralStation getCentral() { return this.central;   }
+
 }
+
+
+

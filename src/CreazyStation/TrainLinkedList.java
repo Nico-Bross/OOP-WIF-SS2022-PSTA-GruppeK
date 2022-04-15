@@ -1,13 +1,25 @@
 package CreazyStation;
 
 public interface TrainLinkedList {
-    int get(int i);
+//    int get(int i);
+//
+//    void put(int i, int v);
+//
+//    void add(int v);
+//
+//    int remove(int i);
+//
+//    int length();
 
-    void put(int i, int v);
 
-    void add(int v);
+    boolean addCar(Car head);
 
-    int remove(int i);
+    Car removeCar();
 
-    int length();
+    void addTrain(Car head);
+
+
+
+
 }
+
