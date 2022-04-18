@@ -12,7 +12,10 @@ public class Car {
     }
 
 
-    public Car(){}
+    public Car(){
+        System.out.println("Warning: Empty Car created");
+    }
+
 
 
     @Override

@@ -1,8 +1,6 @@
 package CreazyStation;
 
 
-import java.util.LinkedList;
-
 public class Train {
     private Station station;
     private CentralStation central;

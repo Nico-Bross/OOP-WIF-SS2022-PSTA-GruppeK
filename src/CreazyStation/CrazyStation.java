@@ -46,12 +46,12 @@ public class CrazyStation {
         Car c14 = new Car(14, berlin, munich);
 
 
-        LinkedListTrain test = new LinkedListTrain(munich, frankfurt);
-
-        test.addCar(c1);
-        test.addCar(c2);
-
-        System.out.println(test.head.next.data.getCarID());
+//        LinkedListTrain test = new LinkedListTrain(munich, frankfurt);
+//
+////        test.addCar(c1);
+////        test.addCar(c2);
+//
+//        System.out.println(test.head.next.data.getCarID());
 
 
 
