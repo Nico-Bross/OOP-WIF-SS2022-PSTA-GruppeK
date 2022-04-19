@@ -8,6 +8,7 @@ public class testCarLinkedList {
         Station berlin = new Station ("Berlin");
         Station cologne = new Station ("Cologne");
         Station munich = new Station ("Munich");
+        Car testItem;
 
 
         Car c1 = new Car(1, hamburg, cologne);
@@ -29,24 +30,39 @@ public class testCarLinkedList {
         testList.add(c2);
         testList.add(c3);
         testList.add(c4);
-        testList.put(3, c6);
+        testList.add(c5);
+        System.out.println(testList.toString());
+        System.out.println(testList.get(1).getTarget());
 //        testList.remove(0);
-//        testList.remove();
-        testList.add(0, c14);
-
-        Car myTestCar;
-        myTestCar = testList.get(0);
-        if (myTestCar!= null)  System.out.println(myTestCar.toString());
-        myTestCar = testList.get(1);
-        if (myTestCar!= null)  System.out.println(myTestCar.toString());
-        myTestCar = testList.get(2);
-        if (myTestCar!= null) System.out.println(myTestCar.toString());
-        myTestCar = testList.get(3);
-        if (myTestCar!= null) System.out.println(myTestCar.toString());
-        myTestCar = testList.get(4);
-        if (myTestCar!= null) System.out.println(myTestCar.toString());
-        myTestCar = testList.get(5);
-        if (myTestCar!= null) System.out.println(myTestCar.toString());
+//        testItem = testList.remove();
+//        if (testItem!= null)  System.out.println(testItem.toString());
+//        testItem = testList.remove(3);
+//        if (testItem!= null)  System.out.println(testItem.toString());
+//        System.out.println(testList.toString());
+//        testItem = testList.remove(3);
+//        if (testItem!= null)  System.out.println(testItem.toString());
+//        System.out.println(testList.toString());
+//        testItem = testList.remove();
+//        if (testItem!= null)  System.out.println(testItem.toString());
+//        testList.add(c6);
+//        testList.add(c7);
+//        testItem = testList.remove();
+//        if (testItem!= null)  System.out.println(testItem.toString());
+//        testItem = testList.remove();
+//        if (testItem!= null)  System.out.println(testItem.toString());
+//        Car myTestCar;
+//        myTestCar = testList.get(0);
+//        if (myTestCar!= null)  System.out.println(myTestCar.toString());
+//        myTestCar = testList.get(1);
+//        if (myTestCar!= null)  System.out.println(myTestCar.toString());
+//        myTestCar = testList.get(2);
+//        if (myTestCar!= null) System.out.println(myTestCar.toString());
+//        myTestCar = testList.get(3);
+//        if (myTestCar!= null) System.out.println(myTestCar.toString());
+//        myTestCar = testList.get(4);
+//        if (myTestCar!= null) System.out.println(myTestCar.toString());
+//        myTestCar = testList.get(5);
+//        if (myTestCar!= null) System.out.println(myTestCar.toString());
 
 //        System.out.println(testList.get(1).getStart());
 

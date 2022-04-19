@@ -1,21 +1,21 @@
 package CreazyStation;
 
-public class CarLinkedList implements CarList {
+public class TrainLinkedList implements TrainList {
 
-    CarListElement head; // Kopf der CarList
+    TrainListElement head; // Kopf der TrainList
 
-    public CarLinkedList(){
+    public TrainLinkedList(){
         head = null; // this means the list is empty at the beginning
     }
 
     @Override
-    public Car get(int i) {
+    public Train get(int i) {
         int count = 0;
 
-        CarListElement currentElement = head;
+        TrainListElement currentElement = head;
         while(currentElement != null){
             if(i == count){
-                return currentElement.getCar();
+                return currentElement.getTrain();
             }
             count++;
             currentElement = currentElement.getNextListElement();
@@ -24,31 +24,31 @@ public class CarLinkedList implements CarList {
     }
 
     @Override
-    public boolean put(int i, Car car) {
+    public boolean put(int i, Train train) {
         int count = 0;
 
-        CarListElement currentElement = head;
+        TrainListElement currentElement = head;
         while (currentElement != null){
             if(i == count){
-                currentElement.setCar(car);
+                currentElement.setTrain(train);
                 return true;
 
             }
-                count++;
-                currentElement = currentElement.getNextListElement();
+            count++;
+            currentElement = currentElement.getNextListElement();
         }
 
         return false;
     }
 
     @Override
-    public boolean add(Car car) {
-        CarListElement newListElement = new CarListElement(car);
+    public boolean add(Train train) {
+        TrainListElement newListElement = new TrainListElement(train);
         if(head == null){
             head = newListElement;
             return true;
         }
-        CarListElement currentElement = head;
+        TrainListElement currentElement = head;
         while(currentElement != null){
             if(currentElement.getNextListElement() == null){
                 currentElement.setNextListElement(newListElement);
@@ -64,8 +64,8 @@ public class CarLinkedList implements CarList {
 
 
     @Override
-    public boolean add(int i, Car car) {
-        CarListElement newListElement = new CarListElement(car);
+    public boolean add(int i, Train train) {
+        TrainListElement newListElement = new TrainListElement(train);
         if(i == 0){
             newListElement.setNextListElement(head);
             head = newListElement;
@@ -73,7 +73,7 @@ public class CarLinkedList implements CarList {
         }
         int count = 0;
 
-        CarListElement currentElement = head;
+        TrainListElement currentElement = head;
         while (currentElement != null){
             if(i == count + 1){
                 newListElement.setNextListElement(currentElement.getNextListElement());
@@ -89,70 +89,70 @@ public class CarLinkedList implements CarList {
     }
 
     @Override
-    public Car remove(int i) {
+    public Train remove(int i) {
         int count = 0;
         if(i == 0) {
-            CarListElement deletedCar = head;
+            TrainListElement deletedTrain = head;
             if(head != null) head = head.getNextListElement();
-            return deletedCar.getCar();
+            return deletedTrain.getTrain();
         }
 
-        CarListElement currentElement = head;
+        TrainListElement currentElement = head;
         while (currentElement != null){
             if(i == count + 1){
 
-                CarListElement deletedCar = currentElement.getNextListElement();
-                if(deletedCar != null) {
-                    currentElement.setNextListElement(deletedCar.getNextListElement());
-                    return deletedCar.getCar();
+                TrainListElement deletedTrain = currentElement.getNextListElement();
+                if(deletedTrain != null) {
+                    currentElement.setNextListElement(deletedTrain.getNextListElement());
+                    return deletedTrain.getTrain();
                 }
-                return null; //The deleted Car is null so we return null
+                return null; //The deleted Train is null so we return null
 
             }
             count++;
             currentElement = currentElement.getNextListElement();
         }
 
-        //This is an error and we return null, since the requested car position i was not in the list
+        //This is an error and we return null, since the requested Train position i was not in the list
         return null;
     }
 
     @Override
-    public Car remove() {
+    public Train remove() {
         if(head == null){
             return null; //the list is empty so we only can return null
         }
         if(head.getNextListElement() == null){
-            CarListElement deletetCarListElemnt = head;
+            TrainListElement deletetTrainListElemnt = head;
             head = null; //Now the list is empty since we removed the last element
-            return deletetCarListElemnt.getCar();
+            return deletetTrainListElemnt.getTrain();
         }
-        CarListElement currentElement = head;
+        TrainListElement currentElement = head;
         while (currentElement.getNextListElement().getNextListElement() != null) {
             currentElement = currentElement.getNextListElement();
         }
-        CarListElement deletedCar = currentElement.getNextListElement();
+        TrainListElement deletedTrain = currentElement.getNextListElement();
         currentElement.setNextListElement(null);
-        return deletedCar.getCar();
-        }
+        return deletedTrain.getTrain();
+    }
 
-        public int getLength() {
-         int count= 0;
-         CarListElement currentElement = head;
-         while(currentElement != null) {
-             ++count;
-             currentElement = currentElement.getNextListElement();
-         }
-         return count;
-
+    public int getLength() {
+        int count= 0;
+        TrainListElement currentElement = head;
+        while(currentElement != null) {
+            ++count;
+            currentElement = currentElement.getNextListElement();
         }
-
-        @Override
-        public String toString() {
-            String result = "CarList with length = " + getLength() ;
-            if(head != null) {result = result + " First Car = " + head.getCar().getCarID();}
-            return result;
-        }
+        return count;
 
     }
+
+    @Override
+    public String toString() {
+        String result = "TrainList with length = " + getLength() ;
+        if(head != null) {result = result + " First Station = " + head.getTrain().getStation() + " Central Station = " + head.getTrain().getCentral();}
+        return result;
+    }
+
+}
 

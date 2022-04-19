@@ -97,7 +97,7 @@ public class Station {
         String s;
         s = name + ":\n";
         for (Car c: storage){
-            s += c.toString() + "\n";
+            if (c != null) s += c.toString() + "\n";
         }
         return s;
     }
