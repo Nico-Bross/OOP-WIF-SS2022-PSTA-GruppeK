@@ -1,6 +1,8 @@
 package CreazyStation;
 
 public class CrazyStation {
+    public static boolean debugMode = false;
+
     public static void main (String[] args){
 
         // Setup
@@ -40,8 +42,14 @@ public class CrazyStation {
         Car c12 = new Car(12, berlin, munich);
         Car c13 = new Car(13, berlin, hamburg);
         Car c14 = new Car(14, berlin, munich);
-
-
+/*
+        munich_frankfurt.addCar(c1);
+        munich_frankfurt.addCar(c2);
+        munich_frankfurt.addCar(c3);
+        munich_frankfurt.removeCar();
+        munich_frankfurt.removeCar();
+        munich_frankfurt.removeCar();
+*/
         hamburg.addCar(c1);
         hamburg.addCar(c2);
         hamburg.addCar(c3);
@@ -64,26 +72,38 @@ public class CrazyStation {
         System.out.println(cologne.toString());
 
         // Cars get attached to the available trains on those routes
-        hamburg.loadTrains();
-        cologne.loadTrains();
-        munich.loadTrains();
-        berlin.loadTrains();
+        hamburg.loadTrain();
+        cologne.loadTrain();
+        munich.loadTrain();
+        berlin.loadTrain();
+        if (CrazyStation.debugMode) System.out.println("__________________Showing Station Hamburg after load__________________");
+        if (CrazyStation.debugMode) System.out.println(hamburg.toStringDetailed());
+
+
+
 
         // Cars get transported from Stations to CentralStation Frankfurt
+        if (CrazyStation.debugMode) System.out.println("__________________Situation at Frankfurt before unloading trains __________________");
+        if (CrazyStation.debugMode) System.out.println(frankfurt.toStringDetailed());
         frankfurt.unloadTrains();
         System.out.println("__________________Cars transported to the Central Station__________________");
         System.out.println(frankfurt.toString());
-        frankfurt.distributeCars();
+        if (CrazyStation.debugMode) System.out.println(frankfurt.toStringDetailed());
+        if (CrazyStation.debugMode) System.out.println("__________________Now we load trains, and display situation at Frankfurt after loading__________________");
+        frankfurt.loadTrains();
+        if (CrazyStation.debugMode) System.out.println(frankfurt.toStringDetailed());
 
+        if (CrazyStation.debugMode) System.out.println("__________________Now we unload trains and again show situation at Frankfurt_________________");
         // Trains drive with the new attached cars back to the stations
-        hamburg.unloadTrains();
-        berlin.unloadTrains();
-        munich.unloadTrains();
-        cologne.unloadTrains();
+        hamburg.unloadTrain();
+        berlin.unloadTrain();
+        munich.unloadTrain();
+        cologne.unloadTrain();
+        if (CrazyStation.debugMode) System.out.println(frankfurt.toString());
 
         // Lets check if all possible cars are at the right station
 
-        System.out.println("__________________transported Cars__________________");
+        System.out.println("__________________transported Cars __________________");
         System.out.println(hamburg.toString());
         System.out.println(berlin.toString());
         System.out.println(munich.toString());
