@@ -1,114 +1,71 @@
 package CreazyStation;
 
 public class Station {
-    private Car[] storage;
-    private Train[] trains;
+    private LinkedList storage;
+    private Train train;
     private String name;
 
     public Station(String name){
         this.name = name;
-        storage = new Car[1];
-        trains = new Train[1];
+        storage = new LinkedList();
     }
 
     public Station(String name, Train train){
         this.name = name;
-        storage = new Car[1];
-        trains = new Train[1];
-        trains [1] = train;
+        storage = new LinkedList();
+        this.train = train;
     }
 
-    public Station(String name, Train[] trains){
-        this.name = name;
-        storage = new Car[1];
-        this.trains = trains;
+    public void addTrain (Train train) {
+        this.train = train;
     }
 
-    public void addTrain (Train c) {
-        if (trains[0] == null) {
-            trains[0] = c;
-        } else {
-            Train[] newArray = new Train[trains.length + 1];
-            for (int i = 0; i < trains.length; i++) {
-                newArray[i] = trains[i];
-            }
-            newArray[trains.length] = c;
-            trains = newArray;
-        }
-    }
-
-    public boolean addCar (Car c){
-        if (storage[0] == null){
-            storage [0] = c;
-            return true;
-        } else {
-            Car[] newArray = new Car[storage.length+1];
-            for (int i = 0; i < storage.length; i++ ){
-                newArray[i] = storage[i];
-            }
-            newArray [storage.length] = c;
-            storage = newArray;
-            return true;
-        }
+    public void addCar (Car c){
+        storage.insertLast(c);
     }
 
     public Car removeCar (){
-        if (storage.length == 0){
-            return null;
-        }
-        Car car = storage[storage.length-1];
-        Car[] newArray = new Car[storage.length-1];
-        for (int i = 0; i < storage.length-1; i++ ){
-            newArray[i] = storage[i];
-        }
-        storage = newArray;
-        return car;
+        return storage.deleteFirst();
     }
 
-    public void loadTrains (){
+    public void loadTrain (){
         Car c = removeCar();
         while (c != null){
-            for (Train t: trains) {
-                while (c != null) {
-                    if (t.addCar(c)) {
-                        c = removeCar();
-                    } else {
-                        break;
-                    }
-                }
-            }
+            train.addCar(c);
             c = removeCar();
         }
-        storage = new Car[1];
     }
 
-    public void unloadTrains () {
-
-        for (Train t: trains){
-            Car c = t.removeCar();
-            while (c!=null){
-                addCar(c);
-                c = t.removeCar();
-            }
+    public void unloadTrain () {
+        if (CrazyStation.debugMode) System.out.println("current list length: " + storage.getListLength());
+        Car c = train.removeCar();
+        while (c != null){
+            storage.insertLast(c);
+            c = train.removeCar();
         }
+        if (CrazyStation.debugMode) System.out.println("after unloadTrain list length: " + storage.getListLength());
     }
 
     public String toString () {
         String s;
-        s = name + ":\n";
-        for (Car c: storage){
-            if (c != null) s += c.toString() + "\n";
-        }
+        s = "Station = " + name + ":\n" + "Carstorage = " + storage.toString();
+        return s;
+    }
+    public String toStringDetailed () {
+        String s;
+        s = "station = " + name + ":\n" ;
+        s+= "storage = " + storage.toString()+ " (end of storage)\n";
+        s+= "train = " + train.toString();
         return s;
     }
 
-    public Car[] getStorage (){return storage; }
+    public LinkedList getStorage (){return storage; }
 
-    public void setStorage (Car[] sorted){
+    public void setStorage (LinkedList sorted){
         storage = sorted;
     }
 
-    public Train[] getTrains ()  { return trains; }
+    public Train getTrains ()  { return train; }
 
     public String getName() { return name; }
 }
